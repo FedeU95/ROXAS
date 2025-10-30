@@ -1,0 +1,13 @@
+The following feature values were flagged:
+
+- nas-eps_emm_mme_grp_id_show=8
+- nas-eps_emm_detach_req_ul_show=4
+- nas-eps_emm_mme_grp_id_unmaskedvalue=16
+- nas-eps_emm_eia5_value=18
+- gsm_a_gm_gmm_tmsi_flag_unmaskedvalue=10
+- nas-eps_emm_eea7_size=6
+- nas-eps_emm_cause_value=3
+- nested_field4_value=7
+- nested_field1_value=4
+- nas-eps_emm_eea4_show=106
+- nas-eps_common_elem_id_size=27

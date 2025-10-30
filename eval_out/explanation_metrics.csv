@@ -1,0 +1,5 @@
+class_name,num_samples,sparsity_mean,sparsity_std,stability_jaccard_mean,stability_jaccard_median,stability_jaccard_std,num_pairs
+Bidding_down_with_ServiceReject,20,2.0,0.0,1.0,1.0,0.0,190
+Energy_Depletion_attack,25,18.68,22.680241033404677,0.3968184356041286,0.1956521739130435,0.42234605932204167,300
+Location_tracking_via_measurement_reports,25,11.48,1.32664991614216,0.8777777777777779,1.0,0.23052135826937487,300
+RRC_replay_attack,25,11.64,1.4966629547095767,0.8444444444444444,1.0,0.2498606077393724,300

@@ -1,0 +1,26 @@
+Summary:
+The suspicious trace exhibits a number of anomalous feature-value pairs, including unusual values for NAS-related parameters, uncommon L3 protocol discriminator, and irregularities in TAI, MCC, MNC, and TMSIs. These anomalies suggest that the detected trace may be associated with a fake base station attack, potentially attempting to perform unauthorized attachments, data theft, or denial-of-service.
+
+Actionable Mitigation Checklist:
+
+1. **5G NAS/RRC Configuration:**
+   - Configure NAS-related timers (e.g., NAS_TIMER_ESTABLISHMENT, NAS_TIMER_REESTABLISHMENT, NAS_TIMER_DETACH) to minimize the window for attackers to perform unauthorized activities.
+   - Implement stricter NAS message authentication mechanisms to ensure the integrity of NAS messages.
+   - Monitor NAS-related KPIs (e.g., number of failed attach attempts, number of detach requests) and set up alerts for unusual activity.
+
+2. **5G Core Network Configuration:**
+   - Implement strict access control policies for the 5G core network, limiting access to authorized entities only.
+   - Configure AAA (Authentication, Authorization, and Accounting) servers to validate user identities and enforce proper access rights.
+   - Monitor core network traffic for unusual patterns, such as high data rates, unusual protocol usage, or abnormal message sequences.
+
+3. **Fake Base Station Detection:**
+   - Deploy a robust fake base station detection system that can identify and isolate rogue base stations based on their unique characteristics, such as unusual timing advance, cell ID, or signal strength.
+   - Regularly update the fake base station database to ensure the detection system is aware of the latest threats.
+
+4. **Network Monitoring and Analysis:**
+   - Implement network monitoring tools to continuously collect and analyze network traffic, looking for anomalous behavior or patterns that may indicate a fake base station attack.
+   - Utilize network forensics tools to investigate suspicious activities and trace back potential attack sources.
+
+5. **Security Awareness and Training:**
+   - Provide regular security awareness training to network operators and personnel to ensure they are aware of the latest threats and best practices for securing wireless networks.
+   - Encourage a culture of security within the organization, emphasizing the importance of vigilance and reporting any suspicious activities.

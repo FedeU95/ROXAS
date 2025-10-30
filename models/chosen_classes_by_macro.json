@@ -1,0 +1,9 @@
+{
+  "chosen_by_macro": {
+    "DoS": 18,
+    "BiddingDown": 20,
+    "LocationTracking": 10,
+    "BatteryDrain": 1
+  },
+  "min_tp": 10
+}

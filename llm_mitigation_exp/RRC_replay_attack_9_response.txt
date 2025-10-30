@@ -1,0 +1,15 @@
+Summary: The suspicious trace exhibits several anomalous features, including an unusual NAS-EMM group ID, an uncommon Detach Request, an irregular TMSIs flag, an abnormal EIA5 value, and an excessive NAS-EMM EEA4 value. These indicators suggest a potential rogue base station attack, where the attacker is attempting to impersonate a legitimate user or perform unauthorized actions.
+
+Actionable Mitigation Checklist:
+1. Isolate the affected user equipment (UE) from the network by blocking its IP address or MAC address at the edge of the network.
+2. Increase the RRC connection re-establishment timer for the affected UE to slow down the attacker's attempts to reconnect.
+3. Implement a whitelist for NAS-EMM group IDs and block any group IDs that deviate from the expected range.
+4. Monitor the Detach Request rate for the affected UE and set up alerts for any unusual activity.
+5. Configure the network to reject any TMSI values that match the flagged TMSIs.
+6. Set up a rule to drop any NAS-EMM messages with an EIA5 value equal to 18.
+7. Limit the size of NAS-EMM EEA4 messages to a reasonable value (e.g., 32 bytes) and drop any messages exceeding this limit.
+8. Monitor the NAS-EMM Cause value for the affected UE and set up alerts for any unusual values.
+9. Investigate the purpose of the nested fields (nested_field1_value and nested_field4_value) and block any messages containing unusual values in these fields.
+10. Monitor the NAS-EMM Common Element ID size and set up alerts for any unusual values.
+
+Assumptions: The network configuration and UE behavior are well-documented and understood. The attacker's goal is to impersonate legitimate users or perform unauthorized actions. The network has the capability to implement the suggested mitigations.

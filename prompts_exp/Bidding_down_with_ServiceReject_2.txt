@@ -1,0 +1,4 @@
+The following feature values were flagged:
+
+- nas-eps_emm_eia5_show=12
+- nas-eps_emm_eea5_size=4
