@@ -10,7 +10,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score, confusion_ma
 import joblib
 
 # --------------- Config ---------------
-DATA_PATH = 'data/MSA.csv'
+DATA_PATH = 'data/MSA.csv'    # See README for the data
 MODEL_DIR = 'models'
 os.makedirs(MODEL_DIR, exist_ok=True)
 
