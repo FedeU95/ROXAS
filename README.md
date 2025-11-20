@@ -20,6 +20,8 @@ The framework’s reasoning outputs are evaluated against the MITRE FIGHT databa
 
 if you use this repo, please refer to:
 
+```bibtex
+
 @inproceedings{uccello2026mission,
   title        = {Mission Explainable: From Feature Attribution to Mitigation in {5G} Anomaly Detection},
   author       = {Uccello, Federica and Karim, Imtiaz and Mubasshir, Kazi Samin and Bertino, Elisa and Nadjm-Tehrani, Simin},
@@ -28,8 +30,7 @@ if you use this repo, please refer to:
   publisher    = {{IEEE}},
   address      = {Honolulu, HI, USA}
 }
-
-
+```
 
 # ACK
 This work was carried out within the NEST project AIR2, which is
