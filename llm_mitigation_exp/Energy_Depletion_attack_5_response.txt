@@ -1,20 +1,13 @@
-Summary:
-The detected NAS trace exhibits a high number of anomalous feature-value pairs, suggesting an unusual 5G network activity that may be related to a fake base station attack. The anomalies include irregular values for NAS and GSM-A fields, such as NAS-eps_emm_active_flg_value, gsm_a_L3_protocol_discriminator_value, and gsm_a_oddevenind_value, which are not typically seen in normal network traffic.
+Cause: The NAS-EMM cause value 126 (EMM_REGISTRATION_REJECTED) indicates a fake base station (IMSI catcher) forcing an invalid registration, likely due to malformed or spoofed NAS messages or missing authentication vectors in the MME/S-GW.
 
-Actionable Mitigation Checklist:
-
-1. **Block the suspicious NAS-ID (12)**: Immediately block the NAS-ID (12) associated with the anomalous trace to prevent further communication from the fake base station.
-
-2. **Update NAS-ID whitelist**: Regularly update the NAS-ID whitelist to include only authorized NAS-IDs and ensure that the whitelist is enforced at the network edge.
-
-3. **Increase RRC connection rejection timer**: Increase the RRC connection rejection timer to give the network more time to identify and reject connections from unauthorized devices.
-
-4. **Implement 5G NAS/RRC anomaly detection rules**: Develop and implement NAS/RRC anomaly detection rules based on the observed anomalous feature-value pairs to quickly identify and isolate similar suspicious activities in the future.
-
-5. **Monitor key KPIs**: Regularly monitor key KPIs such as NAS-ID distribution, RRC connection attempts, and NAS message types to detect any unusual patterns that may indicate a fake base station attack.
-
-6. **Update core network security policies**: Ensure that the core network security policies are up-to-date and effectively block any traffic from unauthorized devices or networks.
-
-7. **Perform regular network audits**: Regularly audit the network for any unauthorized devices or configurations that could potentially be used for a fake base station attack.
-
-Assumptions: The provided feature-value pairs are representative of the entire network traffic, and the observed anomalies are not due to any legitimate network configurations or devices.
+Mitigations:
+Isolate the rogue cell via RAN’s E-UTRAN cell blacklist with timer-based re-evaluation every 15 minutes.
+Enforce strict NAS security mode commands (SMC) with counter for failed attempts, triggering UE ejection.
+Deploy MME-level NAS message validation rules to reject unencrypted or malformed EMM messages.
+Implement NAS message integrity checks with KPI for failed integrity checks, auto-blocking UEs.
+Update MME’s authentication vectors cache with a 1-hour refresh counter to prevent replay attacks.
+Enable RAN’s NAS security algorithm selection to enforce only AES-128 for encryption.
+Configure MME to reject NAS messages with invalid NAS message type identifiers (e.g., 126).
+Set RRC connection re-establishment counters to 3 failed attempts before UE blacklisting.
+Deploy core-level NAS trace analysis with anomaly detection rules for repeated EMM_REGISTRATION_REJECTED.
+Monitor NAS signaling load per cell with KPI thresholds, flagging spikes in EMM messages.

@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_8",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell via RAN’s IMSI catcher detection rules.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS sequence number validation with a rolling window of 10.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 3,
+      "action_text": "Block NAS messages with unregistered gsm_a_common_elem_id (11) in core.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 4,
+      "action_text": "Enable EEA4 ciphering key validation against known KDF outputs.",
+      "fgm_id": "FGM5009.002",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 5,
+      "action_text": "Deploy NAS message integrity checks for nested_field1 values >128.",
+      "fgm_id": "FGM5009.002",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS message rate limit to 5 requests/minute per UE.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 7,
+      "action_text": "Trigger RRC re-establishment for UEs with NAS-EPS sequence >30.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy 5G NAS replay attack detection with 3-second timestamp checks.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 9,
+      "action_text": "Update core to reject NAS-EPS_EMM_EEA4_SHOW values outside 0-105 range.",
+      "fgm_id": "FGM5009.002",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 10,
+      "action_text": "Enable 5G NAS authentication failure counters for anomaly scoring.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    }
+  ]
+}

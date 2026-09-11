@@ -1,0 +1,6 @@
+Context:
+A known fake base station has been detected in the 5G network. An anomaly detection system has flagged a suspicious NAS (Non-Access Stratum) trace that may be related to this activity.
+Input:
+You are provided with the most anomalous feature–value pairs for one suspicious trace.
+Task:
+Provide actionable mitigation recommendations to restore normality.

@@ -1,0 +1,13 @@
+Cause: The flagged NAS value (125) likely indicates an unauthorized IMSI attachment or rogue base station (fake eNodeB/gNB) forcing an emergency or non-emergency service request via NAS_EPS_EMM_CAUSE, exploiting weak authentication or protocol flaws in 5G core/RAN.
+
+Mitigations:
+Deploy NAS_EPS_EMM_CAUSE rule blocking values >124 in core network.
+Enable 5G NAS integrity protection for all NAS messages.
+Enforce NAS security mode command (SMC) validation per 3GPP TS 24.501.
+Set RAN timer T350 (NAS inactivity) to 30 seconds for suspicious IMSIs.
+Implement NAS message replay attack detection with sequence number checks.
+Configure core to reject NAS messages without valid NAS security context.
+Deploy NAS-based IMSI blacklisting for known rogue base station IMSIs.
+Enable 5G NAS message logging for forensic analysis of suspicious traces.
+Set NAS message rate limit (e.g., 5 messages/minute per UE).
+Trigger automated RAN isolation for UEs with repeated NAS_EPS_EMM_CAUSE=125.

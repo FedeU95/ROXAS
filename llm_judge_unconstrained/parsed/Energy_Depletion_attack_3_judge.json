@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_3",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security rules blocking unexpected TAU/ATTACH with unknown TAI.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable 5G NAS integrity protection for all IMSI-based procedures.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Set NAS timer T3450 to 10 seconds to reject delayed responses from rogue BS.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS rule requiring valid 5G authentication before TAU/ATTACH.",
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication"
+    },
+    {
+      "index": 5,
+      "action_text": "Configure RAN to drop UE with mismatched TAI list in NAS messages.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 6,
+      "action_text": "Enforce NAS counter check for duplicate TAU/ATTACH attempts per IMSI.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 7,
+      "action_text": "Use NAS rule to block TAU/ATTACH with unrecognized PLMN-ID.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Bypass Home Routing"
+    },
+    {
+      "index": 8,
+      "action_text": "Monitor NAS KPI for abnormal TAU/ATTACH frequency per UE.",
+      "fgm_id": "FGM0817",
+      "fgm_name": "Supply Chain Management"
+    },
+    {
+      "index": 9,
+      "action_text": "Deploy NAS-based IMSI catcher detection via TAI mismatch alerts.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Bypass Home Routing"
+    },
+    {
+      "index": 10,
+      "action_text": "Enable NAS logging for all unmasked IMSI-related procedures.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    }
+  ]
+}

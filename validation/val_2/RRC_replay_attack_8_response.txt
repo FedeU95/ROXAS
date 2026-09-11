@@ -1,0 +1,13 @@
+Cause: The flagged NAS value (125) likely indicates an unauthorized IMSI attachment or rogue base station (fake eNodeB/gNB) forcing an emergency or non-emergency service request via NAS_EPS_EMM_CAUSE, exploiting weak authentication or protocol misconfigurations in the 5G core (AMF/NEF).
+
+Mitigations:
+Isolate the suspicious gNB/eNodeB via OSS with immediate RAN segmentation rules.
+Enforce NAS security mode command (SMC) with mandatory integrity protection (128-bit keys).
+Deploy NAS trace filtering to block IMSI attachment requests without valid subscriber data.
+Update NEF/AMF to reject NAS_EPS_EMM_CAUSE=125 without prior authentication.
+Enable 5G NAS replay attack detection with a 30-second timestamp window.
+Configure RAN to enforce mandatory 5G NAS security mode (SM1) for all connections.
+Set NAS trace alert threshold to trigger on >5 failed attachments per minute.
+Update SMF to validate NAS messages against subscriber profiles pre-attachment.
+Deploy NAS message signing verification for all NAS_EPS_EMM messages.
+Audit NAS security configurations weekly for compliance with 3GPP TS 24.501.

@@ -1,0 +1,72 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_5",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Deploy NAS sequence number validation with a rolling window of 1000.",
+    "Enforce EEA4 ciphering integrity checks against known IMSI groups.",
+    "Block NAS traces with gsm_a_common_elem_id_value > 10.",
+    "Implement NAS trace rate limiting at 5 requests/minute per IMSI.",
+    "Enable RRC connection rejections for NAS with nested_field1_unmaskedvalue > 180.",
+    "Configure core to drop NAS with nas-eps_seq_no_value < 1000.",
+    "Add NAS rule to flag EEA4 ciphering mismatches in real-time.",
+    "Deploy NAS anomaly detection with 99.9% false-positive threshold.",
+    "Update RAN to enforce NAS trace logging for all EEA4 ciphering attempts.",
+    "Set NAS trace retention timer to 24 hours for forensic analysis."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        1,
+        6,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5010",
+      "fgm_name": "Non-Persistent Services",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5004.001",
+      "fgm_name": "Controller",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM1053",
+      "fgm_name": "Data Backup",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

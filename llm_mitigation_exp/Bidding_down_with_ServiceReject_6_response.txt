@@ -1,0 +1,13 @@
+Cause: The NAS-EMM unmasked value (125) indicates an unauthorized IMSI attachment or tracking area update (TAU) attempt, likely from a fake base station (IMSI-catcher) forcing a rogue network registration.
+
+Mitigations:
+Deploy NAS-level IMSI blacklisting rules for known compromised devices.
+Enable NAS-based TAU authentication failure counters per UE.
+Set NAS timer for TAU retry delays to 30 seconds max.
+Configure RAN to drop NAS messages with invalid IMSI lengths.
+Enforce NAS EMM state machine reset on repeated unmasked IMSI attempts.
+Implement NAS-based IMEI validation against vendor databases.
+Enable NAS-level tracking area list (TAL) validation per PLMN.
+Set NAS rule to block unmasked IMSI values >120 or <100.
+Monitor NAS EMM cause values for "IMSI unknown in HSS" spikes.
+Deploy NAS-based UE context deletion on failed authentication attempts.

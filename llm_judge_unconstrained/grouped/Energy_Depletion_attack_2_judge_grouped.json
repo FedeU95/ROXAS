@@ -1,0 +1,72 @@
+{
+  "sample_id": "Energy_Depletion_attack_2",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the rogue cell via RAN’s TAC filtering rules.",
+    "Enforce NAS security mode commands (NAS-SMC) for all attaches.",
+    "Block unrecognized IMSI ranges in MME/SMF policy controls.",
+    "Deploy NAS integrity protection (NAS-IA5) for all UE sessions.",
+    "Set NAS attach counters to trigger alerts for >3 failed attempts.",
+    "Enable RRC connection rejections for unknown eNB/gNB identities.",
+    "Update MME’s NAS security algorithm list to exclude weak keys.",
+    "Implement NAS trace logging for all IMSI attach attempts.",
+    "Monitor NAS-EMM cause values for unexpected codes (e.g., 125).",
+    "Deploy 5G NAS authentication with SUPI-based validation."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5019.001",
+      "fgm_name": "Intercept Home Network Via SUCI",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM0817",
+      "fgm_name": "Supply Chain Management",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

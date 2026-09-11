@@ -1,0 +1,13 @@
+Cause: The NAS-EMM unmasked value (125) indicates an unauthorized IMSI attachment or rogue base station (fake eNodeB/gNB) forcing an emergency or non-emergency service activation, likely exploiting NAS security gaps or IMSI catcher spoofing.
+
+Mitigations:
+Deploy NAS security mode extension (SME) to enforce stronger integrity protection.
+Enable IMSI concealment (IMSI masking) in NAS signaling to prevent exposure.
+Configure NAS rejection cause for invalid IMSI or unauthorized service requests.
+Implement NAS replay attack detection with sequence number validation.
+Set NAS timer T3450 (NAS inactivity) to 30 seconds for faster disconnection.
+Enforce NAS security algorithm selection (e.g., 128-bit AES) via NAS security mode.
+Deploy RAN-based IMSI filtering to block suspicious IMSI ranges.
+Monitor NAS-EMM cause values for abnormal attachment attempts (e.g., 125).
+Trigger automated RAN isolation for devices with repeated NAS anomalies.
+Update NAS security configuration to disable legacy algorithms (e.g., SNOW 3G).

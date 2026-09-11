@@ -1,0 +1,13 @@
+Cause: The NAS-EMM unmasked value (125) indicates an unauthorized IMSI attachment or tracking area update, likely from a fake base station (IMSI-catcher) forcing a rogue network registration.
+
+Mitigations:
+Deploy IMSI catcher detection rules with NAS-EMM unmasked value thresholds >120.
+Enable 5G NAS security mode enforcement for all UE attachments.
+Configure RAN to block unknown IMSI attachments without valid authentication.
+Implement NAS trace monitoring for repeated unmasked value anomalies.
+Set up a KPI for NAS-EMM unmasked value spikes in high-risk areas.
+Deploy NAS-based IMSI blacklisting for known rogue devices.
+Enforce NAS security context validation for all TAU/ATT attempts.
+Enable 5G core network logging for NAS-EMM unmasked value events.
+Set a counter for failed NAS security mode rejections per UE.
+Update RAN to reject NAS messages with unmasked values >120.

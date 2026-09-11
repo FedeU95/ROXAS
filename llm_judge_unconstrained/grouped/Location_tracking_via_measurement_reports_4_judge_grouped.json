@@ -1,0 +1,60 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_4",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+    "Enable NAS security mode command (SMC) validation for all UEs.",
+    "Enforce strict NAS message sequence checks for EMM state transitions.",
+    "Deploy NAS replay attack detection with 10-second timestamp validation.",
+    "Configure RAN to reject unexpected NAS messages from unknown TACs.",
+    "Implement NAS message integrity checks with 99.9% success KPI.",
+    "Set NAS security algorithm reconfiguration timer to 300 seconds.",
+    "Enable NAS security context validation for all UE attachments.",
+    "Monitor NAS error codes for 125+ occurrences per hour as alert threshold.",
+    "Update RAN to enforce NAS message size limits (≤256 bytes)."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3,
+        4,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        7,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

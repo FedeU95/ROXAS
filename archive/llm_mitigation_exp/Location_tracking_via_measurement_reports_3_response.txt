@@ -1,0 +1,13 @@
+Summary: The suspicious trace exhibits several anomalous features, including an unusual NAS-EMM group ID, an uncommon Detach Request, an irregular TMSIs flag, an abnormal EIA5 value, and an excessive EEA4 value. These indicators suggest a potential rogue base station attack, where the attacker is attempting to impersonate a legitimate user or perform unauthorized actions.
+
+Actionable Mitigation Checklist:
+1. Isolate the affected user equipment (UE) from the network by blocking its IP address or MAC address at the edge of the network.
+2. Increase the RRC connection re-establishment timer (RRCRX-REEST) for the affected UE to prevent it from quickly reconnecting to the network.
+3. Implement a rule in the network's intrusion detection system (IDS) to flag any further activity related to the TMSIs flagged in the trace.
+4. Configure the network to perform more frequent authentication and key agreement (AKA) procedures for the affected UE to ensure its identity is verified.
+5. Monitor the number of detach requests from the affected UE and set up an alert if the number exceeds a predefined threshold.
+6. Analyze the NAS-EMM messages exchanged between the UE and the network to identify any unusual patterns or sequences that may indicate an attack.
+7. Investigate the NAS-EMM group ID and EIA5 values to determine if they correspond to any known rogue base stations or attacker identities.
+8. Review the network's core and RAN configuration to ensure that appropriate security measures are in place, such as proper authentication and encryption protocols, and that any vulnerabilities have been addressed.
+9. Collaborate with other network operators to share information about the detected rogue base station and coordinate responses to mitigate the threat.
+10. Implement a proactive monitoring system to detect and respond to similar attacks in the future, focusing on anomalous NAS/RRC and core/RAN activity.

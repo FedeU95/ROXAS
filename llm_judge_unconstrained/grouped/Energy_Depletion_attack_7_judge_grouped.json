@@ -1,0 +1,54 @@
+{
+  "sample_id": "Energy_Depletion_attack_7",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the rogue cell by blocking its TAC in MME/SMF via dynamic TAC blacklist.",
+    "Enforce strict NAS security mode commands (NAS-SMC) for all UE attachments.",
+    "Deploy 5G NAS integrity protection with 128-bit keys for all NAS messages.",
+    "Enable NAS replay protection with a 10-message sliding window.",
+    "Configure MME to reject NAS messages from unknown TACs within 5-minute windows.",
+    "Implement NAS cause code monitoring with alerts for cause 39 spikes.",
+    "Update RAN to enforce 5G NAS security mode 3 (full integrity protection).",
+    "Set MME to drop NAS messages without valid NAS security header.",
+    "Deploy NAS trace analysis to detect abnormal NAS reset patterns.",
+    "Enable NAS security mode enforcement for all UE contexts in 5G."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        5,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication",
+      "action_indices": [
+        2,
+        3,
+        4,
+        7,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

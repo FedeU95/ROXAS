@@ -1,0 +1,22 @@
+file,true_attack,matched,correct
+prompt_01.txt,Energy Depletion attack,bidding down with servicereject,False
+prompt_02.txt,NAS counter Desynch attack,handover hijacking,False
+prompt_03.txt,X2 signalling flood,x2 signalling flood,True
+prompt_04.txt,Paging channel hijacking attack,bidding down with servicereject,False
+prompt_05.txt,Bidding down with AttachReject,handover hijacking,False
+prompt_06.txt,Incarceration with rrcReject and rrcRelease,handover hijacking,False
+prompt_07.txt,Panic Attack,bidding down with servicereject,False
+prompt_08.txt,Stealthy Kickoff Attack,energy depletion attack,False
+prompt_09.txt,Authentication relay attack,energy depletion attack,False
+prompt_10.txt,Location tracking via measurement reports,handover hijacking,False
+prompt_11.txt,Capability Hijacking,bidding down with attachreject,False
+prompt_12.txt,Lullaby attack using rrcReestablishRequest,energy depletion attack,False
+prompt_13.txt,Mobile Network Mapping (MNmap),capability hijacking,False
+prompt_14.txt,Lullaby attack with rrcResume,imsi catching,False
+prompt_15.txt,IMSI catching,handover hijacking,False
+prompt_16.txt,Incarceration with rrcReestablishReject,bidding down with servicereject,False
+prompt_17.txt,Handover hijacking,authentication relay attack,False
+prompt_18.txt,RRC replay attack,handover hijacking,False
+prompt_19.txt,Lullaby attack with rrcReconfiguration,capability hijacking,False
+prompt_20.txt,Bidding down with ServiceReject,bidding down with servicereject,True
+prompt_21.txt,Bidding down with TAUReject,bidding down with attachreject,False

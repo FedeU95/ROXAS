@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_5",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell by blocking NAS-EPS sequence numbers >30.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS-EMM EEA4 ciphering integrity checks with strict KPI thresholds.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy RRC-level IMSI catcher detection via NAS-EPS sequence number anomalies.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS-EPS sequence number counters with rolling 1000-message limits.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable NAS-EMM EEA4 ciphering validation in core network policies.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Deploy NAS trace monitoring for nested_field1_unmaskedvalue deviations.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 7,
+      "action_text": "Set NAS-EPS sequence number alerts for values exceeding 20% baseline.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 8,
+      "action_text": "Configure RAN to drop NAS messages with gsm_a_common_elem_id=11.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Enforce NAS-EMM EEA4 ciphering re-authentication on repeated failures.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 10,
+      "action_text": "Update core network to reject NAS-EPS traces with nested_field1_unmaskedvalue=176.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Cause: The NAS-EMM cause value 39 (32-bit NAS error) indicates a rogue base station (IMSI catcher) forcing an unauthorized NAS reset, likely to hijack authentication or extract subscriber data via fake 5G NAS signaling.
+
+Mitigations:
+Isolate the rogue cell by blocking its TAC in MME/SMF via dynamic TAC blacklist.
+Enforce strict NAS security mode commands (NAS-SMC) for all UE attachments.
+Deploy 5G NAS integrity protection with 128-bit keys for all NAS messages.
+Enable NAS replay protection with a 10-message sliding window.
+Configure MME to reject NAS messages from unknown TACs within 5-minute windows.
+Implement NAS cause code monitoring with alerts for cause 39 spikes.
+Update RAN to enforce 5G NAS security mode 3 (full integrity protection).
+Set MME to drop NAS messages without valid NAS security header.
+Deploy NAS trace analysis to detect abnormal NAS reset patterns.
+Enable NAS security mode enforcement for all UE contexts in 5G.

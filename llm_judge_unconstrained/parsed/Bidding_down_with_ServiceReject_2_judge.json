@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_2",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell via immediate RAN exclusion list update for IMSI/TAI (32) matching the NAS sequence.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable strict NAS message integrity checks for EPS sequence numbers, flagging values >20 as suspicious.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy real-time NAS message rate limiting (10 messages/minute per UE) to detect spoofing bursts.",
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage"
+    },
+    {
+      "index": 4,
+      "action_text": "Enforce NAS message authentication codes (MAC) for all NAS messages, blocking unencrypted or mismatched MACs.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 5,
+      "action_text": "Update core network to reject NAS messages with nested_field1_show values >5, defaulting to 0.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 6,
+      "action_text": "Deploy NAS sequence number tracking per UE, alerting on unexpected jumps or resets.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 7,
+      "action_text": "Configure RAN to enforce NAS message size limits (≤256 bytes), dropping oversized packets.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 8,
+      "action_text": "Enable NAS message replay detection via sequence number history (last 100 messages per UE).",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 9,
+      "action_text": "Trigger automated RAN cell blacklisting for gsm_a_common_elem_id=11, assuming spoofed authentication attempts.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS message patterns for anomalies in nested_field1_unmaskedvalue, flagging deviations from baseline.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    }
+  ]
+}

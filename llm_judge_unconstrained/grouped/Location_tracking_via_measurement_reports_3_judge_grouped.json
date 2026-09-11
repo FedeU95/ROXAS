@@ -1,0 +1,60 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_3",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Isolate the rogue cell via RAN’s cell reselection blacklist timer.",
+    "Enforce NAS-EPS sequence number validation with a rolling window of 3.",
+    "Block nested field 176 (unmasked) via NAS integrity check rule.",
+    "Enable EEA4 ciphering enforcement with a 10-second timeout for failures.",
+    "Deploy NAS trace correlation with gsm_a_common_elem_id=11 as a red flag.",
+    "Implement NAS message replay detection using sequence number counters.",
+    "Configure RAN to drop connections with NAS-EPS_EMM_EEA4_show > 100.",
+    "Set NAS integrity protection to mandatory for all UE attachments.",
+    "Monitor NAS trace logs for nested_field1_unmaskedvalue spikes.",
+    "Trigger automated cell outage if NAS anomalies exceed 5 per minute."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM1009",
+      "fgm_name": "Encrypt Network Traffic",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM0817",
+      "fgm_name": "Supply Chain Management",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

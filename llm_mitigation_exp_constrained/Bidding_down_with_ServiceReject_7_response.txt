@@ -1,0 +1,13 @@
+Cause: The suspicious NAS trace indicates a potential fake base station (IMSI catcher) exploiting NAS protocol anomalies, such as invalid sequence numbers and improperly masked fields.
+
+FGM5002 Discard RAN signaling received without integrity protection; enforce NAS integrity checks.
+FGM5003 Cross check between application layer and transport layer; validate NAS payloads.
+FGM5004 Correctly configure SMS firewall; block NAS messages with invalid sequence numbers.
+FGM5005 Physical and environmental protection; restrict NAS traffic to authorized gNBs.
+FGM5012 Slice ID check; enforce NAS message validation per slice.
+FGM5013 Timely updates to UE status; flag stale NAS sequence numbers.
+FGM5024 Integrity protection of data communication; enforce NAS message authentication.
+FGM5091 Mutual authentication; verify NAS messages with UE credentials.
+FGM5093 SUCI parameter checks; validate NAS messages with SUCI integrity.
+FGM5095 TLS certificate check; enforce NAS signaling over TLS.
+FGM5097 Disable acceptance of a less secure system; block unencrypted NAS traffic.

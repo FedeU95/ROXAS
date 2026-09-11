@@ -1,0 +1,54 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_3",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Deploy NAS security enhancements with NAS security mode 3+ for all subscribers.",
+    "Enforce NAS security key re-derivation after each handover or attachment.",
+    "Implement NAS trace filtering to block EMM state 125 transitions without valid authentication.",
+    "Configure RAN to reject NAS messages from untrusted eNBs/gNBs with invalid TACs.",
+    "Enable 5G NAS integrity protection for all NAS messages with NAS security mode 3+.",
+    "Set up NAS security rule to block IMSI exposure in unencrypted NAS messages.",
+    "Deploy NAS security monitoring with alerting for unexpected EMM state transitions.",
+    "Configure core network to enforce NAS security mode 3+ for all 5G NAS procedures.",
+    "Implement NAS security KPI tracking for failed authentication attempts per subscriber.",
+    "Update NAS security policies to require NAS security mode 3+ for all roaming scenarios."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface",
+      "action_indices": [
+        1,
+        2,
+        5,
+        6,
+        8,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        3,
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

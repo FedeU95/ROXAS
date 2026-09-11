@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_4",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the suspicious gNB/eNodeB via OSS with immediate RAN segmentation rules.",
+      "fgm_id": "FGM1030",
+      "fgm_name": "Network Segmentation"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS_EPS_EMM_CAUSE threshold alerts for values >120 in NEF logs.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "NO_MATCH"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy IMSI-based blacklisting in AMF for known rogue IMSIs (KPI: <5% false positives).",
+      "fgm_id": "FGM1018",
+      "fgm_name": "User Account Management"
+    },
+    {
+      "index": 4,
+      "action_text": "Enable NAS security mode enforcement (SM4/SNOW) for all NAS messages.",
+      "fgm_id": "FGM1009",
+      "fgm_name": "Encrypt Network Traffic"
+    },
+    {
+      "index": 5,
+      "action_text": "Configure NAS message replay detection with 3-second timestamp tolerance.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS_EPS_EMM_CAUSE counter to trigger automated AMF re-authentication.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 7,
+      "action_text": "Update RAN to enforce NAS integrity protection (IPA) for all NAS messages.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Implement NAS message rate limiting (10 messages/minute per UE).",
+      "fgm_id": "FGM5518",
+      "fgm_name": "Resource Policy Enforcement"
+    },
+    {
+      "index": 9,
+      "action_text": "Audit NAS_EPS_EMM_CAUSE logs for anomalies in NEF with 15-minute intervals.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    },
+    {
+      "index": 10,
+      "action_text": "Deploy NAS message signature validation for all NAS_EPS_EMM_CAUSE values.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    }
+  ]
+}

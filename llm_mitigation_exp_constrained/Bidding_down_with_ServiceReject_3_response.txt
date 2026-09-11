@@ -1,0 +1,12 @@
+Cause: The unmasked NAS EPS EMM value (125) suggests an unauthorized or rogue base station (fake IMSI catcher) is intercepting or spoofing subscriber authentication, likely to extract or manipulate subscriber data.
+
+FGM5002 Discard RAN signaling received without integrity protection; enforce NAS/RRC integrity checks
+FGM5004 Correctly configure SMS firewall; block unencrypted NAS messages
+FGM5005 Physical and environmental protection; secure RAN equipment locations
+FGM5012 Slice ID check; validate NAS signaling slice identifiers
+FGM5023 Periodic authentication & authorization of NFs; enforce NAS/RRC session re-authentication
+FGM5024 Integrity protection of data communication; enforce NAS/RRC message integrity
+FGM5033 Zero Trust; enforce strict NAS/RRC message origin validation
+FGM5091 Mutual authentication; enforce NAS/RRC mutual authentication for all messages
+FGM5093 SUCI parameter checks; validate SUCI format in NAS messages
+FGM5095 TLS certificate check; enforce TLS for NAS/RRC signaling interfaces

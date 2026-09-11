@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_6",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the suspicious cell by blacklisting its CI/PCI/TAC in RAN.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable NAS security mode enforcement with mandatory integrity protection.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS trace analysis with threshold for repeated 126 cause values.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure core to reject NAS messages from unknown TAI lists.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS replay attack detection with sequence number validation.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS timer T350 for registration attempts to 10 seconds max.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 7,
+      "action_text": "Enforce NAS security context validation for all attach requests.",
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy 5G NAS authentication failure rate KPI monitoring.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 9,
+      "action_text": "Block NAS messages from cells with mismatched PLMN-ID.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 10,
+      "action_text": "Update RAN to enforce NAS security mode 1 for all attachments.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    }
+  ]
+}

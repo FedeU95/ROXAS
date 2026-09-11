@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_3",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security enhancements with NAS security mode 3+ for all subscribers.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security key re-derivation after each handover or attachment.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 3,
+      "action_text": "Implement NAS trace filtering to block EMM state 125 transitions without valid authentication.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure RAN to reject NAS messages from untrusted eNBs/gNBs with invalid TACs.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable 5G NAS integrity protection for all NAS messages with NAS security mode 3+.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 6,
+      "action_text": "Set up NAS security rule to block IMSI exposure in unencrypted NAS messages.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy NAS security monitoring with alerting for unexpected EMM state transitions.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 8,
+      "action_text": "Configure core network to enforce NAS security mode 3+ for all 5G NAS procedures.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 9,
+      "action_text": "Implement NAS security KPI tracking for failed authentication attempts per subscriber.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 10,
+      "action_text": "Update NAS security policies to require NAS security mode 3+ for all roaming scenarios.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    }
+  ]
+}

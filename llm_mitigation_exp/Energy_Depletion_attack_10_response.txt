@@ -1,0 +1,13 @@
+Cause: The suspicious NAS trace indicates a rogue 5G base station (fake eNB/gNB) impersonating a legitimate network, likely exploiting NAS/EMM layer vulnerabilities (e.g., EEA4 ciphering bypass) to intercept or manipulate user plane traffic.
+
+Mitigations:
+Deploy NAS integrity protection (128-bit) for all EMM messages.
+Enforce NAS security mode command (SMC) re-authentication on NAS-EPS sequence >30.
+Block unknown gsm_a_common_elem_id values (non-standard IEs).
+Restrict EEA4 ciphering to trusted networks only (KPI: <1% usage).
+Implement NAS trace analysis with NAS-EPS sequence <50 threshold.
+Enable RRC connection re-establishment on NAS anomaly detection.
+Configure core network to reject NAS traces with nested_field1_unmaskedvalue >5.
+Deploy 5G NAS replay attack detection with sequence number window (≤100).
+Set NAS security mode command failure counter to trigger isolation.
+Update RAN to enforce NAS security mode command (SMC) for all UE attachments.

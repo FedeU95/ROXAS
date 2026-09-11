@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_1",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the rogue cell via immediate RAN exclusion list update.",
+    "Enable strict NAS security mode (e.g., enforce NAS integrity protection).",
+    "Deploy NAS message validation rules for eEA0/eIA0 sizes (≤128 bits).",
+    "Trigger automated NAS re-authentication for affected devices.",
+    "Set NAS sequence number (seq_no) threshold (≤31) for anomaly alerts.",
+    "Block unrecognized NAS element IDs (e.g., elem_id=7, 18) via core firewall.",
+    "Enable 5G NAS replay attack detection with 3-second timestamp validation.",
+    "Configure NAS spare bits (≤8) and size limits for eMM messages.",
+    "Deploy RRC connection reset for devices with gsm_a_extension_size=1.",
+    "Monitor NAS message frequency spikes (>5/minute) as attack KPI."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        3,
+        5,
+        7,
+        8,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        6
+      ]
+    }
+  ]
+}

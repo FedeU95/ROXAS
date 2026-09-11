@@ -1,0 +1,13 @@
+Cause: The NAS-EMM cause value 126 (EMM_REGISTERED_NORMAL_SERVICE) with unmasked NAS indicates a rogue base station (IMSI catcher) forcing unauthorized NAS registration, likely to intercept or spoof 5G authentication/attachments.
+
+Mitigations:
+Isolate the suspicious cell by blacklisting its CI/PCI/TAC in RAN.
+Enable NAS security mode enforcement with mandatory integrity protection.
+Deploy NAS trace analysis with threshold for repeated 126 cause values.
+Configure core to reject NAS messages from unknown TAI lists.
+Implement NAS replay attack detection with sequence number validation.
+Set NAS timer T350 for registration attempts to 10 seconds max.
+Enforce NAS security context validation for all attach requests.
+Deploy 5G NAS authentication failure rate KPI monitoring.
+Block NAS messages from cells with mismatched PLMN-ID.
+Update RAN to enforce NAS security mode 1 for all attachments.

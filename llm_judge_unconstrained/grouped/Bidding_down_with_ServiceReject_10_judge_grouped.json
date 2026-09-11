@@ -1,0 +1,78 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_10",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS with immediate RAN segmentation rules.",
+    "Enforce NAS security mode command (SMC) with mandatory integrity protection (128-bit keys).",
+    "Deploy NAS trace filtering to block IMSI attachment requests without valid authentication.",
+    "Update NEF/AMF to reject NAS_EPS_EMM_CAUSE=125 without prior NAS security context.",
+    "Enable 5G NAS replay attack detection with a 30-second timestamp window.",
+    "Configure RAN to enforce NAS message integrity checks for all NAS_EPS_EMM messages.",
+    "Set NAS security mode command failure counter threshold at 5 consecutive failures.",
+    "Deploy NAS message rate limiting (10 requests/minute per UE) via AMF policies.",
+    "Enable NAS protocol conformance testing for all gNB/eNodeB deployments.",
+    "Audit NAS security configuration for missing NAS security mode command enforcement."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM1030",
+      "fgm_name": "Network Segmentation",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        4,
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM1027",
+      "fgm_name": "Password Policies",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5518",
+      "fgm_name": "Resource Policy Enforcement",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM1016",
+      "fgm_name": "Vulnerability Scanning",
+      "action_indices": [
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

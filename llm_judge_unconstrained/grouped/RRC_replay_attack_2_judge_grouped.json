@@ -1,0 +1,66 @@
+{
+  "sample_id": "RRC_replay_attack_2",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the rogue cell via RAN’s TAC filtering rules.",
+    "Enforce NAS security mode commands (SMC) with strict ciphering.",
+    "Block unrecognized IMSI prefixes in MME/SMF via policy controls.",
+    "Deploy NAS replay attack detection with sequence number checks.",
+    "Enable 5G NAS integrity protection for all NAS messages.",
+    "Set NAS timer T3502 to 10 seconds to reject delayed responses.",
+    "Update MME/SMF to reject invalid NAS messages with EMM_CAUSE=125.",
+    "Deploy 5G NAS authentication with SUPI-based integrity checks.",
+    "Monitor NAS traces for repeated unmasked IMSI attachments.",
+    "Trigger automated RAN blacklisting for cells with NAS anomalies."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        4,
+        7,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5019.001",
+      "fgm_name": "Intercept Home Network Via SUCI",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5016",
+      "fgm_name": "Abuse Of Inter-operator Interfaces",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

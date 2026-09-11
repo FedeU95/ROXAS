@@ -1,0 +1,66 @@
+{
+  "sample_id": "RRC_replay_attack_6",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+    "Enforce NAS security mode command (NSC) validation for all UEs.",
+    "Deploy NAS message replay attack detection with sequence number counters.",
+    "Set NAS timer T3450 (UE inactivity) to 30 seconds for anomaly detection.",
+    "Enable NAS integrity protection for all NAS messages with KSI counters.",
+    "Configure RAN to drop NAS messages from unknown MME/S-GW IPs.",
+    "Implement NAS state machine validation with state transition KPIs.",
+    "Deploy NAS message rate limiting (e.g., 5 messages/minute per UE).",
+    "Monitor NAS-EPS EMM state transitions for unexpected values like 125.",
+    "Trigger automated RAN reconfiguration for gNBs with repeated NAS anomalies."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface",
+      "action_indices": [
+        2,
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5014",
+      "fgm_name": "UE Location Plausibility",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage",
+      "action_indices": [
+        8
+      ]
+    }
+  ]
+}

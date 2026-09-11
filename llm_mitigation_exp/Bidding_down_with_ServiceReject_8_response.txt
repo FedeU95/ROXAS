@@ -1,0 +1,13 @@
+Cause: The suspicious NAS trace indicates a rogue 5G base station (fake eNB/gNB) spoofing NAS signaling (EPS sequence number 32) with malformed NAS messages (common element ID 11, unmasked nested field 3/12), likely to hijack UE authentication or intercept core network access.
+
+Mitigations:
+Isolate the UE by blocking NAS messages with gsm_a_common_elem_id_value=11.
+Enable NAS message integrity checks for EPS sequence numbers >30.
+Deploy NAS message rate-limiting (threshold: 5 messages/minute per UE).
+Enforce NAS message size validation (reject >256-byte payloads).
+Deploy NAS sequence number tracking (flag duplicates within 10-second window).
+Configure RAN to drop NAS messages with nested_field1_unmaskedvalue=3.
+Enable 5G NAS replay attack protection with 1-minute timestamp validation.
+Update core network to reject NAS messages with nested_field1_show=12.
+Deploy NAS message cryptographic validation for all UE sessions.
+Enable NAS message logging for forensic analysis (store for 72 hours).

@@ -1,0 +1,72 @@
+{
+  "sample_id": "Energy_Depletion_attack_4",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS protocol validation rules to block unregistered protocol discriminator values.",
+    "Set NAS sequence number thresholds to flag out-of-order or rapid sequence resets.",
+    "Enable NAS message integrity checks for EEA0/EEA1/128-EEA1 ciphering mismatches.",
+    "Implement RRC connection re-establishment counters for repeated failed handovers.",
+    "Configure core network to reject NAS messages with invalid EMM state transitions.",
+    "Enforce NAS message rate limiting per subscriber to detect spoofing attempts.",
+    "Deploy 5G authentication failure KPIs to trigger automated network isolation.",
+    "Update RAN to enforce strict gNB identity verification via IMEI/SN checks.",
+    "Enable NAS message replay detection with timestamp validation windows.",
+    "Configure core to drop NAS messages with nested field inconsistencies or missing flags."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        2,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        3,
+        5,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        8
+      ]
+    }
+  ]
+}

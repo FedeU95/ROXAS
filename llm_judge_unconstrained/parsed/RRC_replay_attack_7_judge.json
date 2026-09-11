@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_7",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS sequence number validation with a rolling window of 3.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS-EMM EEA4 integrity checks against known vendor baselines.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 3,
+      "action_text": "Block NAS traces with nested_field1_unmaskedvalue > 128.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement RRC-level IMSI filtering for gsm_a_common_elem_id=11.",
+      "fgm_id": "FGM5006",
+      "fgm_name": "Restrictive User Profile"
+    },
+    {
+      "index": 5,
+      "action_text": "Set NAS-EPS sequence number threshold alerts at 20 deviations.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable 5G core NAS trace logging for gsm_a_common_elem_id=11.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan"
+    },
+    {
+      "index": 7,
+      "action_text": "Configure RAN to drop NAS messages with nas-eps_seq_no_value > 100.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS anomaly detection with a 5-minute counter reset.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Update core network to reject NAS-EMM EEA4 with value=106.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 10,
+      "action_text": "Enforce NAS trace rate limiting at 1000 messages/minute per UE.",
+      "fgm_id": "FGM5010",
+      "fgm_name": "Non-Persistent Services"
+    }
+  ]
+}

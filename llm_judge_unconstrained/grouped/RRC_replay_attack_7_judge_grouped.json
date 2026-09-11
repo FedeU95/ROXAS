@@ -1,0 +1,66 @@
+{
+  "sample_id": "RRC_replay_attack_7",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS sequence number validation with a rolling window of 3.",
+    "Enforce NAS-EMM EEA4 integrity checks against known vendor baselines.",
+    "Block NAS traces with nested_field1_unmaskedvalue > 128.",
+    "Implement RRC-level IMSI filtering for gsm_a_common_elem_id=11.",
+    "Set NAS-EPS sequence number threshold alerts at 20 deviations.",
+    "Enable 5G core NAS trace logging for gsm_a_common_elem_id=11.",
+    "Configure RAN to drop NAS messages with nas-eps_seq_no_value > 100.",
+    "Deploy NAS anomaly detection with a 5-minute counter reset.",
+    "Update core network to reject NAS-EMM EEA4 with value=106.",
+    "Enforce NAS trace rate limiting at 1000 messages/minute per UE."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication",
+      "action_indices": [
+        2,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        3,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5006",
+      "fgm_name": "Restrictive User Profile",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5010",
+      "fgm_name": "Non-Persistent Services",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

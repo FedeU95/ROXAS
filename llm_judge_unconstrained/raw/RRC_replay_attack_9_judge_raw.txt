@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_9",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS sequence number validation with a rolling window of 1000 to block reuse.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS-EPS EMM integrity checks for EEA4 ciphering mismatches.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 3,
+      "action_text": "Enable RRC connection re-establishment with NAS replay protection for roaming users.",
+      "fgm_id": "FGM5094",
+      "fgm_name": "Allocate New 5G Identifiers Judiciously"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure core network to flag NAS traces with nested_field1_unmaskedvalue > 128.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS-EPS sequence number counters per UE with 5-minute expiration.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 6,
+      "action_text": "Block NAS traces with gsm_a_common_elem_id_value=11 unless from trusted eNBs.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy 5G NAS authentication failure rate KPIs (>3% triggers alert).",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 8,
+      "action_text": "Restrict NAS-EPS EMM messages to authorized ciphering suites (EEA0-3).",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 9,
+      "action_text": "Enable RAN-side NAS message logging for suspicious gsm_a_common_elem_id_value=11.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 10,
+      "action_text": "Set NAS-EPS EMM replay detection threshold to 2 occurrences per minute.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    }
+  ]
+}

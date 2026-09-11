@@ -1,0 +1,13 @@
+Cause: The NAS-EPS EMM state (125) indicates an unexpected transition to *DETACHED* or *DEREGISTERED* state, likely triggered by a rogue 5G base station (fake NB-IoT/eMBB cell) forcing premature NAS session termination or IMSI attachment fraud.
+
+Mitigations:
+Deploy NAS security event monitoring with a rule for EMM state transitions exceeding 3 per minute.
+Enforce NAS security mode commands (NAS-SMC) with a counter for failed rejections above 5% of total.
+Configure RAN to block unregistered IMSIs with a timer of 10 seconds for repeated NAS failures.
+Implement NAS replay attack protection with a KPI for duplicate NAS messages within 2 seconds.
+Enable 5G NAS integrity protection for all EMM messages with a rule for disabled integrity checks.
+Set NAS security context timeout to 30 seconds for idle UE in suspicious areas.
+Deploy NAS authentication failure rate monitoring with a threshold of 10% per cell.
+Configure NAS security mode reconfiguration with a counter for failed attempts above 2.
+Enforce NAS security mode command rejection for untrusted cells with a timer of 5 seconds.
+Monitor NAS EMM state transitions with a KPI for unexpected *DETACHED* states in high-risk zones.

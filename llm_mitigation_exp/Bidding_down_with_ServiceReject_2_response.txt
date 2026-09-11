@@ -1,11 +1,13 @@
-Summary: The anomalous NAS trace indicates an unusual combination of values for the NAS EPS EMM EIA5 (EMM Information Elements) and EEA5 (EMM Error Indications) parameters, which may suggest a potential rogue base station attack. This could be an attempt to manipulate the network by sending malicious messages or causing denial-of-service conditions.
+Cause: The suspicious NAS trace indicates a rogue 5G base station (fake eNB/gNB) spoofing NAS signaling, likely via manipulated EPS sequence numbers (32) and nested NAS fields (unmasked value=2, show=7) to impersonate legitimate UE authentication or handover attempts.
 
-Actionable Mitigation Checklist:
-1. Isolate the suspicious device: Immediately isolate the device associated with the anomalous trace from the 5G network to prevent further potential harm.
-2. Update blacklist: Add the device's IMSI (International Mobile Subscriber Identity) to the network's blacklist to prevent it from reconnecting.
-3. Analyze NAS messages: Analyze the NAS messages exchanged between the device and the network to identify any patterns or malicious content.
-4. Configure NAS EPS EMM timers: Adjust NAS EPS EMM timers (e.g., T3324, T3325) to minimize the impact of potential denial-of-service attacks. Lowering these timers can help reduce the time a device can remain connected and cause harm.
-5. Monitor KPIs: Continuously monitor key performance indicators (KPIs) related to NAS EPS EMM, such as the number of EMM messages, EMM message errors, and EMM message processing times. This can help detect any unusual activity or trends that may indicate a rogue base station attack.
-6. Implement intrusion detection systems (IDS): Deploy IDS solutions at the RAN and core network levels to detect and respond to potential rogue base station attacks more effectively.
-7. Update network firmware: Ensure that all network equipment, including base stations and core network elements, are running the latest firmware to address any known vulnerabilities that could be exploited by attackers.
-8. Collaborate with law enforcement: If the attack is determined to be malicious and targeted, collaborate with law enforcement agencies to investigate the incident and potentially prosecute the attackers.
+Mitigations:
+Isolate the rogue cell via immediate RAN exclusion list update for IMSI/TAI (32) matching the NAS sequence.
+Enable strict NAS message integrity checks for EPS sequence numbers, flagging values >20 as suspicious.
+Deploy real-time NAS message rate limiting (10 messages/minute per UE) to detect spoofing bursts.
+Enforce NAS message authentication codes (MAC) for all NAS messages, blocking unencrypted or mismatched MACs.
+Update core network to reject NAS messages with nested_field1_show values >5, defaulting to 0.
+Deploy NAS sequence number tracking per UE, alerting on unexpected jumps or resets.
+Configure RAN to enforce NAS message size limits (≤256 bytes), dropping oversized packets.
+Enable NAS message replay detection via sequence number history (last 100 messages per UE).
+Trigger automated RAN cell blacklisting for gsm_a_common_elem_id=11, assuming spoofed authentication attempts.
+Monitor NAS message patterns for anomalies in nested_field1_unmaskedvalue, flagging deviations from baseline.

@@ -1,0 +1,66 @@
+{
+  "sample_id": "Energy_Depletion_attack_8",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS_EPS_EMM_CAUSE rule blocking values >124 in core network.",
+    "Enable 5G NAS integrity protection for all NAS messages.",
+    "Enforce NAS security mode command (SMC) validation per 3GPP TS 24.501.",
+    "Set RAN timer T350 (NAS inactivity) to 30 seconds for suspicious IMSIs.",
+    "Implement NAS message replay attack detection with sequence number checks.",
+    "Configure core to reject NAS messages without valid NAS security context.",
+    "Deploy NAS-based IMSI blacklisting for known rogue base station IMSIs.",
+    "Enable 5G NAS message logging for forensic analysis of suspicious traces.",
+    "Set NAS message rate limit (e.g., 5 messages/minute per UE).",
+    "Trigger automated RAN isolation for UEs with repeated NAS_EPS_EMM_CAUSE=125."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        7,
+        8,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5518",
+      "fgm_name": "Resource Policy Enforcement",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

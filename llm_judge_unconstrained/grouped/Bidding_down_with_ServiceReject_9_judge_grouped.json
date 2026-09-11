@@ -1,0 +1,72 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_9",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+    "Enforce NAS security mode command (NSC) validation for all UEs.",
+    "Deploy NAS message replay attack detection with sequence number counters.",
+    "Set NAS timer T3450 (UE inactivity) to 30 seconds for anomaly detection.",
+    "Enable NAS integrity protection for all NAS messages with KSI counters.",
+    "Configure RAN to drop NAS messages from unknown eNBs/gNBs via X2/Xn interface.",
+    "Implement NAS state machine validation with finite state machine rules.",
+    "Monitor NAS-EPS EMM state transitions for abrupt changes in KPI dashboards.",
+    "Deploy NAS message authentication with 5G-AKA integrity checks.",
+    "Trigger automated UE deregistration for repeated NAS state anomalies."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        5,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "NO_MATCH",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5041",
+      "fgm_name": "DOS An NF Via Deregistration",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

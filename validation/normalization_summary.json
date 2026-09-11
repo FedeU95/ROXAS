@@ -1,0 +1,42 @@
+{
+  "val_1.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_2.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_4.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_5.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_6.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_7.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_8.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_3.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_9.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  },
+  "val_10.xlsx": {
+    "status": "success",
+    "rows_generated": 40
+  }
+}

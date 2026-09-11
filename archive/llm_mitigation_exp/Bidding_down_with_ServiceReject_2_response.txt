@@ -1,0 +1,11 @@
+Summary: The anomalous NAS trace indicates an unusual combination of values for the NAS EPS EMM EIA5 (EMM Information Elements) and EEA5 (EMM Error Indications) parameters, which may suggest a potential rogue base station attack. This could be an attempt to manipulate the network by sending malicious messages or causing denial-of-service conditions.
+
+Actionable Mitigation Checklist:
+1. Isolate the suspicious device: Immediately isolate the device associated with the anomalous trace from the 5G network to prevent further potential harm.
+2. Update blacklist: Add the device's IMSI (International Mobile Subscriber Identity) to the network's blacklist to prevent it from reconnecting.
+3. Analyze NAS messages: Analyze the NAS messages exchanged between the device and the network to identify any patterns or malicious content.
+4. Configure NAS EPS EMM timers: Adjust NAS EPS EMM timers (e.g., T3324, T3325) to minimize the impact of potential denial-of-service attacks. Lowering these timers can help reduce the time a device can remain connected and cause harm.
+5. Monitor KPIs: Continuously monitor key performance indicators (KPIs) related to NAS EPS EMM, such as the number of EMM messages, EMM message errors, and EMM message processing times. This can help detect any unusual activity or trends that may indicate a rogue base station attack.
+6. Implement intrusion detection systems (IDS): Deploy IDS solutions at the RAN and core network levels to detect and respond to potential rogue base station attacks more effectively.
+7. Update network firmware: Ensure that all network equipment, including base stations and core network elements, are running the latest firmware to address any known vulnerabilities that could be exploited by attackers.
+8. Collaborate with law enforcement: If the attack is determined to be malicious and targeted, collaborate with law enforcement agencies to investigate the incident and potentially prosecute the attackers.

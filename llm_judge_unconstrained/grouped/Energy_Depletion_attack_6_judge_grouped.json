@@ -1,0 +1,84 @@
+{
+  "sample_id": "Energy_Depletion_attack_6",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the suspicious cell by blacklisting its CI/PCI/TAC in RAN.",
+    "Enable NAS security mode enforcement with mandatory integrity protection.",
+    "Deploy NAS trace analysis with threshold for repeated 126 cause values.",
+    "Configure core to reject NAS messages from unknown TAI lists.",
+    "Implement NAS replay attack detection with sequence number validation.",
+    "Set NAS timer T350 for registration attempts to 10 seconds max.",
+    "Enforce NAS security context validation for all attach requests.",
+    "Deploy 5G NAS authentication failure rate KPI monitoring.",
+    "Block NAS messages from cells with mismatched PLMN-ID.",
+    "Update RAN to enforce NAS security mode 1 for all attachments."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        5,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

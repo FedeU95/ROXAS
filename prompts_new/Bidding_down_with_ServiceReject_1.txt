@@ -1,0 +1,18 @@
+The following feature values were flagged:
+
+- nested_field2_value=-1
+- nas-eps_emm_eia5_show=31
+- nas-eps_emm_elem_id_unmaskedvalue=7
+- nas-eps_emm_eia5_size=15
+- nas-eps_spare_bits_size=13
+- nas-eps_emm_esm_msg_cont_show=9
+- nas-eps_emm_eea4_size=16
+- nas-eps_emm_eps_upip_value=74
+- nas-eps_emm_eia0_show=175
+- gsm_a_dtap_elem_id_size=31
+- nas-eps_seq_no_value=32
+- nested_field1_show=12
+- gsm_a_extension_size=1
+- nas-eps_emm_128eea2_unmaskedvalue=18
+- nas-eps_emm_eea0_show=8
+- nas-eps_emm_eea4_show=106

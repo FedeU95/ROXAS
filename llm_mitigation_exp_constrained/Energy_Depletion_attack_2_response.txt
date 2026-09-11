@@ -1,0 +1,12 @@
+Cause: The unmasked NAS value (125) suggests an unauthorized or rogue base station (fake eNB) is impersonating a legitimate network, likely exploiting NAS/EMM signaling to deceive the UE.
+
+FGM5002 Discard RAN signaling received without integrity protection; enforce NAS integrity checks.
+FGM5003 Cross check between application layer and transport layer; validate NAS payloads.
+FGM5004 Correctly configure SMS firewall; block untrusted NAS messages.
+FGM5005 Physical and environmental protection; secure RAN equipment locations.
+FGM5012 Slice ID check; enforce valid slice allocation for NAS signaling.
+FGM5013 Timely updates to UE status; verify NAS state transitions.
+FGM5024 Integrity protection of data communication; enforce NAS security headers.
+FGM5091 Mutual authentication; require NAS-level UE/network validation.
+FGM5093 SUCI parameter checks; validate subscriber identities in NAS.
+FGM5095 TLS certificate check; enforce NAS signaling encryption.

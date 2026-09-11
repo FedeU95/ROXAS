@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_10",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security mode extension (SME) to enforce strict IMSI attachment rules.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 2,
+      "action_text": "Set NAS security mode counter to 3+ for all UEs to block unauthorized NAS messages.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Enable NAS trace filtering with NAS-EPS-EMM-128EEA1 threshold at 100+ for alerts.",
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure RAN to reject NAS messages from unknown eNB/gNB IEs.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS integrity protection with NAS-MAP-ALLOWLIST for trusted IMSIs.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 6,
+      "action_text": "Enforce NAS timer T3450 (reauthentication) at 10-minute intervals for suspicious UEs.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 7,
+      "action_text": "Block NAS messages with NAS-EPS-EMM-128EEA1 > 120 via core policy rules.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS-based UE context validation to verify eNB/gNB legitimacy.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 9,
+      "action_text": "Enable NAS-based emergency-only mode enforcement for non-registered UEs.",
+      "fgm_id": "FGM5006",
+      "fgm_name": "Restrictive User Profile"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS message frequency per UE with a 5-message/second counter for anomalies.",
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage"
+    }
+  ]
+}

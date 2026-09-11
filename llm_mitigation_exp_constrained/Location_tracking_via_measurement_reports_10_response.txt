@@ -1,0 +1,12 @@
+Cause: The unmasked NAS value (125) in *nas-eps_emm_128eea1* suggests a rogue base station (fake gNB) is impersonating a legitimate network, likely exploiting missing integrity checks or unauthorized subscriber access.
+
+FGM5002 Discard RAN signaling received without integrity protection; enforce NAS/RRC integrity protection for all messages.
+FGM5003 Cross check between application layer and transport layer; validate NAS payloads against RRC headers.
+FGM5004 Correctly configure SMS firewall; block unencrypted NAS signaling from unknown gNBs.
+FGM5005 Physical and environmental protection; isolate RAN equipment from unauthorized access.
+FGM5012 Slice ID check; enforce slice-specific NAS message validation.
+FGM5013 Timely updates to UE status; verify subscriber context changes in real-time.
+FGM5023 Periodic authentication and authorization of NFs; re-authenticate gNBs via NAS.
+FGM5024 Integrity protection of data communication; enforce NAS message authentication codes (MACs).
+FGM5091 Mutual authentication; require gNB-to-UE and UE-to-gNB NAS authentication.
+FGM5095 TLS certificate check; validate NAS signaling via TLS for core-RAN interfaces.

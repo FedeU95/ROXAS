@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_2",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS sequence number validation with rolling window of 1000, blocking duplicates.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS-EPS EEA4 ciphering integrity checks against known attack patterns.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Enable RRC connection rejections for devices with mismatched NAS-EPS sequence gaps.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS trace logging for all EEA4 ciphering attempts exceeding 5 per minute.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 5,
+      "action_text": "Configure core network to flag NAS traces with nested_field1_unmaskedvalue > 128.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS-EPS gsm_a_common_elem_id_value threshold at 10, blocking higher values.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy RAN-side NAS message rate limiting at 30 messages per hour per device.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 8,
+      "action_text": "Enable 5G NAS authentication failure counters, triggering alerts at 3 consecutive failures.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 9,
+      "action_text": "Update NAS core rules to block NAS-EPS traces with emm_eea4_show > 100.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 10,
+      "action_text": "Deploy IMSI-catcher detection via NAS-EPS sequence number entropy analysis.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    }
+  ]
+}

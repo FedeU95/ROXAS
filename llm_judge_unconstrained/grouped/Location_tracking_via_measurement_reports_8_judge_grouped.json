@@ -1,0 +1,72 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_8",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Isolate the rogue cell via RAN’s IMSI catcher detection rules.",
+    "Enforce NAS sequence number validation with a rolling window of 10.",
+    "Block NAS messages with unregistered gsm_a_common_elem_id (11) in core.",
+    "Enable EEA4 ciphering key validation against known KDF outputs.",
+    "Deploy NAS message integrity checks for nested_field1 values >128.",
+    "Set NAS message rate limit to 5 requests/minute per UE.",
+    "Trigger RRC re-establishment for UEs with NAS-EPS sequence >30.",
+    "Deploy 5G NAS replay attack detection with 3-second timestamp checks.",
+    "Update core to reject NAS-EPS_EMM_EEA4_SHOW values outside 0-105 range.",
+    "Enable 5G NAS authentication failure counters for anomaly scoring."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        2,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.002",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        4,
+        5,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

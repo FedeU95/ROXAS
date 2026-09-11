@@ -1,0 +1,20 @@
+Summary:
+The detected NAS trace exhibits a high number of anomalous feature-value pairs, suggesting an unusual 5G network activity that may be related to a fake base station attack. The anomalies include irregular values for NAS and GSM-A fields, such as NAS-eps_emm_active_flg_value, gsm_a_L3_protocol_discriminator_value, and gsm_a_oddevenind_value, which are not typically seen in normal network traffic.
+
+Actionable Mitigation Checklist:
+
+1. **Block the suspicious NAS-ID (12)**: Immediately block the NAS-ID (12) associated with the anomalous trace to prevent further communication from the fake base station.
+
+2. **Update NAS-ID whitelist**: Regularly update the NAS-ID whitelist to include only authorized NAS-IDs and ensure that the whitelist is enforced at the network edge.
+
+3. **Increase RRC connection rejection timer**: Increase the RRC connection rejection timer to give the network more time to identify and reject connections from unauthorized devices.
+
+4. **Implement 5G NAS/RRC anomaly detection rules**: Develop and implement NAS/RRC anomaly detection rules based on the observed anomalous feature-value pairs to quickly identify and isolate similar suspicious activities in the future.
+
+5. **Monitor key KPIs**: Regularly monitor key KPIs such as NAS-ID distribution, RRC connection attempts, and NAS message types to detect any unusual patterns that may indicate a fake base station attack.
+
+6. **Update core network security policies**: Ensure that the core network security policies are up-to-date and effectively block any traffic from unauthorized devices or networks.
+
+7. **Perform regular network audits**: Regularly audit the network for any unauthorized devices or configurations that could potentially be used for a fake base station attack.
+
+Assumptions: The provided feature-value pairs are representative of the entire network traffic, and the observed anomalies are not due to any legitimate network configurations or devices.

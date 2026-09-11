@@ -1,0 +1,9 @@
+The following feature values were flagged:
+
+- gsm_a_L3_protocol_discriminator_value=15
+- gsm_a_dtap_elem_id_size=6
+- nas-eps_seq_no_value=8
+- nas-eps_emm_128eea1_unmaskedvalue=18
+- nas-eps_emm_128eia1_value=9
+- nested_field1_show=0
+- nas-eps_emm_eea0_show=-1

@@ -1,0 +1,48 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_6",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Deploy NAS sequence number validation with a rolling window of 3.",
+    "Enforce NAS-EPS sequence number < 1000 for all NAS messages.",
+    "Block NAS messages with gsm_a_common_elem_id_value > 10.",
+    "Enable EEA4 ciphering integrity checks via NAS-EPS EMM.",
+    "Implement NAS message rate limiting at 5 messages/second per UE.",
+    "Deploy NAS message size validation (< 256 bytes).",
+    "Enable NAS message replay detection with a 10-second window.",
+    "Configure RAN to drop NAS messages with nested_field1_unmaskedvalue > 128.",
+    "Enforce NAS-EPS EEA4 ciphering enforcement for all UEs.",
+    "Update core network to reject NAS messages with emm_eea4_show > 100."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        4,
+        9,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        5
+      ]
+    }
+  ]
+}

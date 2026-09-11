@@ -1,0 +1,13 @@
+Cause: The NAS-EPS EMM state (125) indicates an unauthorized roaming or IMSI catch attempt, likely from a fake base station exploiting NAS security gaps to hijack subscriber sessions.
+
+Mitigations:
+Deploy NAS security enhancements with NAS security mode 3+ for all subscribers.
+Enforce NAS security key re-derivation after each handover or attachment.
+Implement NAS trace filtering to block EMM state 125 transitions without valid authentication.
+Configure RAN to reject NAS messages from untrusted eNBs/gNBs with invalid TACs.
+Enable 5G NAS integrity protection for all NAS messages with NAS security mode 3+.
+Set up NAS security rule to block IMSI exposure in unencrypted NAS messages.
+Deploy NAS security monitoring with alerting for unexpected EMM state transitions.
+Configure core network to enforce NAS security mode 3+ for all 5G NAS procedures.
+Implement NAS security KPI tracking for failed authentication attempts per subscriber.
+Update NAS security policies to require NAS security mode 3+ for all roaming scenarios.

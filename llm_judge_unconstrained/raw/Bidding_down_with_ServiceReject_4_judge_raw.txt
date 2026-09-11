@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_4",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security event monitoring with a threshold of 3 failed EMM state transitions per device per hour.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable 5G NAS integrity protection with NAS security mode extension (NSSF) enforcement.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Configure RAN to block unregistered MME/AMF IPs for NAS signaling with a 5-second timeout.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS trace filtering to drop all EMM state 128eea1 traces from unknown eNB/gNBs.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 5,
+      "action_text": "Set NAS security context validation rules requiring pre-authentication for non-home networks.",
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable 5G NAS replay attack detection with a 10-message window for duplicate NAS messages.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 7,
+      "action_text": "Restrict NAS EMM state transitions to authorized states (e.g., 128eea1 → 128eea2) only.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS anomaly scoring with a score > 0.9 flagging for manual review.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 9,
+      "action_text": "Update RAN to enforce NAS security mode 3 for all UE attachments.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS EMM state 128eea1 occurrences per UE, alerting if exceeding 1 per 24 hours.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sample_id": "RRC_replay_attack_1",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy IMSI catcher detection rules with NAS-EMM unmasked value thresholds >120.",
+    "Enable 5G NAS security mode enforcement for all UE attachments.",
+    "Configure RAN to block unknown IMSI attachments without valid authentication.",
+    "Implement NAS trace monitoring for repeated unmasked value anomalies.",
+    "Set up a KPI for NAS-EMM unmasked value spikes in high-risk areas.",
+    "Deploy NAS-based IMSI blacklisting for known rogue devices.",
+    "Enforce NAS security context validation for all TAU/ATT attempts.",
+    "Enable 5G core network logging for NAS-EMM unmasked value events.",
+    "Set a counter for failed NAS security mode rejections per UE.",
+    "Update RAN to reject NAS messages with unmasked values >120."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "NO_MATCH",
+      "fgm_name": "UNKNOWN",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5019",
+      "fgm_name": "Authorize External API Calls",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

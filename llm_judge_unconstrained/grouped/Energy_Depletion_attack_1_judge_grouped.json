@@ -1,0 +1,48 @@
+{
+  "sample_id": "Energy_Depletion_attack_1",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS security mode extension (SME) to enforce stronger integrity protection.",
+    "Enable IMSI concealment (IMSI masking) in NAS signaling to prevent exposure.",
+    "Configure NAS rejection cause for invalid IMSI or unauthorized service requests.",
+    "Implement NAS replay attack detection with sequence number validation.",
+    "Set NAS timer T3450 (NAS inactivity) to 30 seconds for faster disconnection.",
+    "Enforce NAS security algorithm selection (e.g., 128-bit AES) via NAS security mode.",
+    "Deploy RAN-based IMSI filtering to block suspicious IMSI ranges.",
+    "Monitor NAS-EMM cause values for abnormal attachment attempts (e.g., 125).",
+    "Trigger automated RAN isolation for devices with repeated NAS anomalies.",
+    "Update NAS security configuration to disable legacy algorithms (e.g., SNOW 3G)."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5093",
+      "fgm_name": "SUCI Parameter Checks",
+      "action_indices": [
+        2
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        5
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_10",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS integrity protection with EEA4 ciphering enforcement via RRC/NAS rules.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 2,
+      "action_text": "Set NAS sequence number thresholds (e.g., reject >1000 consecutive increments).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Enable 5G NAS replay attack detection with 3-second timestamp validation.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Block nested EEA4 parameters unless from trusted MME/SMF via NAS rules.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS message rate limiting (e.g., <5 messages/second per UE).",
+      "fgm_id": "FGM5019",
+      "fgm_name": "Authorize External API Calls"
+    },
+    {
+      "index": 6,
+      "action_text": "Enforce NAS security mode completion (SMC) before data transmission.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy IMSI-catcher detection via NAS EMM cause code (e.g., reject cause 503).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Update RAN to filter NAS messages with gsm_a_common_elem_id=11 (legacy IMSI trap).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Enable NAS trace logging for all EEA4 ciphering failures with NAS-eps_seq_no.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS-eps_emm_eea4_show anomalies via automated KPI alerts.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    }
+  ]
+}

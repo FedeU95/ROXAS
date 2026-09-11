@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_7",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell via RAN’s IMSI catcher blacklist (timer: 15-minute auto-revert).",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable NAS integrity protection with 5G-AKA’ and enforce NAS sequence number validation (counter: reject >30 consecutive mismatches).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS trace-based anomaly detection with KPI: block traces with nested_field1_unmaskedvalue >2.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure core network to reject EPS Mobility Management with gsm_a_common_elem_id=11 (rule: NAS-0007).",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS sequence number rollover checks (KPI: flag if <5% deviation from expected).",
+      "fgm_id": "UNKNOWN"
+    },
+    {
+      "index": 6,
+      "action_text": "Deploy 5G RAN’s IMSI catcher detection with NAS trace correlation (timer: 1-hour alert escalation).",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 7,
+      "action_text": "Enforce NAS message replay protection via timestamp validation (counter: reject >30-second delays).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Update NAS protocol stack to ignore nested_field1_show=12 (rule: NAS-0012).",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 9,
+      "action_text": "Enable 5G core’s NAS message authentication code (MAC) verification for all EPS MM messages.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 10,
+      "action_text": "Deploy real-time NAS trace monitoring with KPI: alert on nested_field1_unmaskedvalue=3 in <10 traces.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    }
+  ]
+}

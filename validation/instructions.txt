@@ -1,0 +1,14 @@
+Each folder is named after one human validator, and contains 4 data points with attack label, and LLM-generated mitigation actions.
+
+**Each participant should also take track on how long it takes to complete the validation of all data points (total time elapsed from start of task 1 to the end of task 3) **
+
+1. Map the attack label with the most suitable MITRE FiGHT technique and record the FGT.
+	https://fight.mitre.org/techniques
+
+2. Map (if possible) the LLM-generated mitigation with MITRE FiGHT mitigations for the given attack technique and record the FGMs.
+	https://fight.mitre.org/mitigations
+	Actions could be mapped to multiple FGMs (they tend to be broad
+
+3.  If one or more mitigations can't be mapped with FGMs from the corresponding FGT, annotate it, and check if they can be mapped to any mitigation from the 	database. If yes, record it specifying it. If not, annotate it. 
+
+Thank you :)

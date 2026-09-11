@@ -1,0 +1,287 @@
+{
+  "model": "open-mistral-7b",
+  "total_elapsed_seconds": 433.05986976623535,
+  "total_elapsed_minutes": 7.2176644961039225,
+  "samples": [
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_1",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 8.444310426712036,
+      "elapsed_minutes": 0.14073850711186728,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_10",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 8.956388235092163,
+      "elapsed_minutes": 0.14927313725153604,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_2",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 8.243157148361206,
+      "elapsed_minutes": 0.13738595247268676,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_3",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 9.263057947158813,
+      "elapsed_minutes": 0.15438429911931356,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_4",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 14.793473243713379,
+      "elapsed_minutes": 0.24655788739522297,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_5",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 9.069599390029907,
+      "elapsed_minutes": 0.15115998983383178,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_6",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 7.375868320465088,
+      "elapsed_minutes": 0.12293113867441813,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_7",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 10.035851001739502,
+      "elapsed_minutes": 0.16726418336232504,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_8",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 10.049425601959229,
+      "elapsed_minutes": 0.1674904266993205,
+      "status": "success"
+    },
+    {
+      "sample_id": "Bidding_down_with_ServiceReject_9",
+      "attack_label": "Bidding Down with Service Reject",
+      "elapsed_seconds": 7.336730718612671,
+      "elapsed_minutes": 0.12227884531021119,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_1",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 11.166638612747192,
+      "elapsed_minutes": 0.18611064354578655,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_10",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 7.450602054595947,
+      "elapsed_minutes": 0.12417670090993245,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_2",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 7.371257781982422,
+      "elapsed_minutes": 0.1228542963663737,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_3",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 8.260426759719849,
+      "elapsed_minutes": 0.13767377932866415,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_4",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 10.4038987159729,
+      "elapsed_minutes": 0.17339831193288166,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_5",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 11.58973741531372,
+      "elapsed_minutes": 0.19316229025522869,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_6",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 8.237554788589478,
+      "elapsed_minutes": 0.13729257980982462,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_7",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 7.995923042297363,
+      "elapsed_minutes": 0.1332653840382894,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_8",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 7.2493181228637695,
+      "elapsed_minutes": 0.12082196871439616,
+      "status": "success"
+    },
+    {
+      "sample_id": "Energy_Depletion_attack_9",
+      "attack_label": "Energy Depletion",
+      "elapsed_seconds": 8.021793603897095,
+      "elapsed_minutes": 0.1336965600649516,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_1",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 6.7975523471832275,
+      "elapsed_minutes": 0.11329253911972045,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_10",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 7.057591199874878,
+      "elapsed_minutes": 0.11762651999791464,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_2",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 6.09429144859314,
+      "elapsed_minutes": 0.10157152414321899,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_3",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 7.757805824279785,
+      "elapsed_minutes": 0.12929676373799642,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_4",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 6.738540172576904,
+      "elapsed_minutes": 0.11230900287628173,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_5",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 6.926652669906616,
+      "elapsed_minutes": 0.11544421116511026,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_6",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 8.447625637054443,
+      "elapsed_minutes": 0.14079376061757407,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_7",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 9.946223258972168,
+      "elapsed_minutes": 0.16577038764953614,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_8",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 8.685847759246826,
+      "elapsed_minutes": 0.14476412932078045,
+      "status": "success"
+    },
+    {
+      "sample_id": "Location_tracking_via_measurement_reports_9",
+      "attack_label": "Location Tracking",
+      "elapsed_seconds": 8.828746318817139,
+      "elapsed_minutes": 0.14714577198028564,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_1",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 7.205308437347412,
+      "elapsed_minutes": 0.1200884739557902,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_10",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 8.560201644897461,
+      "elapsed_minutes": 0.14267002741495768,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_2",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 17.26925563812256,
+      "elapsed_minutes": 0.2878209273020426,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_3",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 8.489593982696533,
+      "elapsed_minutes": 0.1414932330449422,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_4",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 7.855496644973755,
+      "elapsed_minutes": 0.13092494408289593,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_5",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 12.934376001358032,
+      "elapsed_minutes": 0.2155729333559672,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_6",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 8.18039083480835,
+      "elapsed_minutes": 0.13633984724680584,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_7",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 8.873612403869629,
+      "elapsed_minutes": 0.14789354006449382,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_8",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 7.688006639480591,
+      "elapsed_minutes": 0.1281334439913432,
+      "status": "success"
+    },
+    {
+      "sample_id": "RRC_replay_attack_9",
+      "attack_label": "RRC Replay",
+      "elapsed_seconds": 7.371546983718872,
+      "elapsed_minutes": 0.12285911639531454,
+      "status": "success"
+    }
+  ]
+}

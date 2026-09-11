@@ -1,0 +1,13 @@
+Cause: The NAS-EPS EMM state value of 125 (likely "DETACHED" or invalid transition) suggests a rogue base station forcing improper NAS session termination or impersonating a legitimate eNodeB/gNB to hijack UE authentication.
+
+Mitigations:
+Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.
+Enable NAS security mode command (SMC) validation for all UEs.
+Enforce strict NAS message sequence checks for EMM state transitions.
+Deploy NAS replay attack detection with 10-second timestamp validation.
+Configure RAN to reject unexpected NAS messages from unknown TACs.
+Implement NAS message integrity checks with 99.9% success KPI.
+Set NAS security algorithm reconfiguration timer to 300 seconds.
+Enable NAS security context validation for all UE attachments.
+Monitor NAS error codes for 125+ occurrences per hour as alert threshold.
+Update RAN to enforce NAS message size limits (≤256 bytes).

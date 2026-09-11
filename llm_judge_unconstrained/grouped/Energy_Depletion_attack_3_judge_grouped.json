@@ -1,0 +1,78 @@
+{
+  "sample_id": "Energy_Depletion_attack_3",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS security rules blocking unexpected TAU/ATTACH with unknown TAI.",
+    "Enable 5G NAS integrity protection for all IMSI-based procedures.",
+    "Set NAS timer T3450 to 10 seconds to reject delayed responses from rogue BS.",
+    "Implement NAS rule requiring valid 5G authentication before TAU/ATTACH.",
+    "Configure RAN to drop UE with mismatched TAI list in NAS messages.",
+    "Enforce NAS counter check for duplicate TAU/ATTACH attempts per IMSI.",
+    "Use NAS rule to block TAU/ATTACH with unrecognized PLMN-ID.",
+    "Monitor NAS KPI for abnormal TAU/ATTACH frequency per UE.",
+    "Deploy NAS-based IMSI catcher detection via TAI mismatch alerts.",
+    "Enable NAS logging for all unmasked IMSI-related procedures."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        1,
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Bypass Home Routing",
+      "action_indices": [
+        7,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM0817",
+      "fgm_name": "Supply Chain Management",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

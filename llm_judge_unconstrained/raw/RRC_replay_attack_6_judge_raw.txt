@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_6",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode command (NSC) validation for all UEs.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS message replay attack detection with sequence number counters.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Set NAS timer T3450 (UE inactivity) to 30 seconds for anomaly detection.",
+      "fgm_id": "FGM5014",
+      "fgm_name": "UE Location Plausibility"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable NAS integrity protection for all NAS messages with KSI counters.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface"
+    },
+    {
+      "index": 6,
+      "action_text": "Configure RAN to drop NAS messages from unknown MME/S-GW IPs.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 7,
+      "action_text": "Implement NAS state machine validation with state transition KPIs.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS message rate limiting (e.g., 5 messages/minute per UE).",
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage"
+    },
+    {
+      "index": 9,
+      "action_text": "Monitor NAS-EPS EMM state transitions for unexpected values like 125.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 10,
+      "action_text": "Trigger automated RAN reconfiguration for gNBs with repeated NAS anomalies.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    }
+  ]
+}

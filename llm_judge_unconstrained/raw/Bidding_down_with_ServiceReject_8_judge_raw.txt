@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_8",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the UE by blocking NAS messages with gsm_a_common_elem_id_value=11.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable NAS message integrity checks for EPS sequence numbers >30.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS message rate-limiting (threshold: 5 messages/minute per UE).",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 4,
+      "action_text": "Enforce NAS message size validation (reject >256-byte payloads).",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 5,
+      "action_text": "Deploy NAS sequence number tracking (flag duplicates within 10-second window).",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Configure RAN to drop NAS messages with nested_field1_unmaskedvalue=3.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 7,
+      "action_text": "Enable 5G NAS replay attack protection with 1-minute timestamp validation.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 8,
+      "action_text": "Update core network to reject NAS messages with nested_field1_show=12.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 9,
+      "action_text": "Deploy NAS message cryptographic validation for all UE sessions.",
+      "fgm_id": "FGM1009",
+      "fgm_name": "Encrypt Network Traffic"
+    },
+    {
+      "index": 10,
+      "action_text": "Enable NAS message logging for forensic analysis (store for 72 hours).",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    }
+  ]
+}

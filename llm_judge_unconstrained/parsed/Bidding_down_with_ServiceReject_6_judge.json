@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_6",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS-level IMSI blacklisting rules for known compromised devices.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable NAS-based TAU authentication failure counters per UE.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 3,
+      "action_text": "Set NAS timer for TAU retry delays to 30 seconds max.",
+      "fgm_id": "FGM5016",
+      "fgm_name": "NO_MATCH"
+    },
+    {
+      "index": 4,
+      "action_text": "Configure RAN to drop NAS messages with invalid IMSI lengths.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Enforce NAS EMM state machine reset on repeated unmasked IMSI attempts.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 6,
+      "action_text": "Implement NAS-based IMEI validation against vendor databases.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "NO_MATCH"
+    },
+    {
+      "index": 7,
+      "action_text": "Enable NAS-level tracking area list (TAL) validation per PLMN.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 8,
+      "action_text": "Set NAS rule to block unmasked IMSI values >120 or <100.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Monitor NAS EMM cause values for 'IMSI unknown in HSS' spikes.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 10,
+      "action_text": "Deploy NAS-based UE context deletion on failed authentication attempts.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_10",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the suspicious gNB/eNodeB via OSS with immediate RAN segmentation rules.",
+      "fgm_id": "FGM1030",
+      "fgm_name": "Network Segmentation"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode command (SMC) with mandatory integrity protection (128-bit keys).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS trace filtering to block IMSI attachment requests without valid authentication.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Update NEF/AMF to reject NAS_EPS_EMM_CAUSE=125 without prior NAS security context.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable 5G NAS replay attack detection with a 30-second timestamp window.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Configure RAN to enforce NAS message integrity checks for all NAS_EPS_EMM messages.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 7,
+      "action_text": "Set NAS security mode command failure counter threshold at 5 consecutive failures.",
+      "fgm_id": "FGM1027",
+      "fgm_name": "Password Policies"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS message rate limiting (10 requests/minute per UE) via AMF policies.",
+      "fgm_id": "FGM5518",
+      "fgm_name": "Resource Policy Enforcement"
+    },
+    {
+      "index": 9,
+      "action_text": "Enable NAS protocol conformance testing for all gNB/eNodeB deployments.",
+      "fgm_id": "FGM1016",
+      "fgm_name": "Vulnerability Scanning"
+    },
+    {
+      "index": 10,
+      "action_text": "Audit NAS security configuration for missing NAS security mode command enforcement.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    }
+  ]
+}

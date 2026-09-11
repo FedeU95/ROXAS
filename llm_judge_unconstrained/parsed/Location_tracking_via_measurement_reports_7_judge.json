@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_7",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security enhancements with NAS security mode extension (NSE) for integrity protection.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode 3 or 4 for all UE attachments in core/RAN.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Configure RAN to reject NAS messages with unexpected EMM state transitions.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS trace analysis with a threshold of <100 EMM state 128eea1 occurrences per hour.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    },
+    {
+      "index": 5,
+      "action_text": "Block IMSI catcher signatures via RRC security alerts for suspicious cells.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable NAS replay attack detection with a counter limit of 3 retries per session.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 7,
+      "action_text": "Restrict NAS emergency attachment to authorized emergency services only.",
+      "fgm_id": "FGM5006",
+      "fgm_name": "Restrictive User Profile"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS authentication failure rate KPI monitoring with a threshold of 5%.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    },
+    {
+      "index": 9,
+      "action_text": "Update core/RAN to enforce NAS security mode enforcement for all UEs.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 10,
+      "action_text": "Trigger automated RAN cell blacklisting for repeated NAS anomaly detections.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    }
+  ]
+}

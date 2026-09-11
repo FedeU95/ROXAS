@@ -1,0 +1,78 @@
+{
+  "sample_id": "RRC_replay_attack_8",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS with immediate RAN segmentation rules.",
+    "Enforce NAS security mode command (SMC) with mandatory integrity protection (128-bit keys).",
+    "Deploy NAS trace filtering to block IMSI attachment requests without valid subscriber data.",
+    "Update NEF/AMF to reject NAS_EPS_EMM_CAUSE=125 without prior authentication.",
+    "Enable 5G NAS replay attack detection with a 30-second timestamp window.",
+    "Configure RAN to enforce mandatory 5G NAS security mode (SM1) for all connections.",
+    "Set NAS trace alert threshold to trigger on >5 failed attachments per minute.",
+    "Update SMF to validate NAS messages against subscriber profiles pre-attachment.",
+    "Deploy NAS message signing verification for all NAS_EPS_EMM messages.",
+    "Audit NAS security configurations weekly for compliance with 3GPP TS 24.501."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM1030",
+      "fgm_name": "Network Segmentation",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        6,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5020",
+      "fgm_name": "Secure Subscriber Repositories",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

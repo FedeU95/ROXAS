@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_1",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS security mode extension (SME) to enforce stronger integrity protection.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable IMSI concealment (IMSI masking) in NAS signaling to prevent exposure.",
+      "fgm_id": "FGM5093",
+      "fgm_name": "SUCI Parameter Checks"
+    },
+    {
+      "index": 3,
+      "action_text": "Configure NAS rejection cause for invalid IMSI or unauthorized service requests.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS replay attack detection with sequence number validation.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Set NAS timer T3450 (NAS inactivity) to 30 seconds for faster disconnection.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 6,
+      "action_text": "Enforce NAS security algorithm selection (e.g., 128-bit AES) via NAS security mode.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy RAN-based IMSI filtering to block suspicious IMSI ranges.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Monitor NAS-EMM cause values for abnormal attachment attempts (e.g., 125).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Trigger automated RAN isolation for devices with repeated NAS anomalies.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 10,
+      "action_text": "Update NAS security configuration to disable legacy algorithms (e.g., SNOW 3G).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    }
+  ]
+}

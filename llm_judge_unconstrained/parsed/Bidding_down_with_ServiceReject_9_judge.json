@@ -1,0 +1,68 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_9",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode command (NSC) validation for all UEs.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy NAS message replay attack detection with sequence number counters.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Set NAS timer T3450 (UE inactivity) to 30 seconds for anomaly detection.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable NAS integrity protection for all NAS messages with KSI counters.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Configure RAN to drop NAS messages from unknown eNBs/gNBs via X2/Xn interface.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 7,
+      "action_text": "Implement NAS state machine validation with finite state machine rules.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 8,
+      "action_text": "Monitor NAS-EPS EMM state transitions for abrupt changes in KPI dashboards.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "NO_MATCH"
+    },
+    {
+      "index": 9,
+      "action_text": "Deploy NAS message authentication with 5G-AKA integrity checks.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 10,
+      "action_text": "Trigger automated UE deregistration for repeated NAS state anomalies.",
+      "fgm_id": "FGM5041",
+      "fgm_name": "DOS An NF Via Deregistration"
+    }
+  ]
+}

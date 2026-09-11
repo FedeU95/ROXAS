@@ -1,0 +1,60 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_9",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    "Deploy IMSI blacklisting rules for known compromised devices.",
+    "Enable NAS security mode command (SEC-MODE-CMD) enforcement.",
+    "Set NAS timer T3450 to 10 seconds for faster rogue cell detection.",
+    "Implement NAS security context validation for all TAU/ATTACH requests.",
+    "Configure RAN to reject NAS messages with invalid NAS security algorithms.",
+    "Enable NAS integrity protection for all NAS messages.",
+    "Set NAS counter T3512 to 30 seconds for suspicious NAS retries.",
+    "Deploy NAS message filtering for unexpected NAS-EMM unmasked values.",
+    "Enforce NAS security mode command (SEC-MODE-CMD) for all UE registrations.",
+    "Monitor NAS trace logs for repeated NAS-EMM unmasked value anomalies."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Bypass Home Routing",
+      "action_indices": [
+        1
+      ]
+    },
+    {
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        4,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        3,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

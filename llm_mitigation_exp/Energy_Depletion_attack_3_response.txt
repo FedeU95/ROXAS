@@ -1,0 +1,13 @@
+Cause: The NAS-EPS_EMM_128eea1 unmasked value of 125 indicates an unauthorized IMSI attachment or tracking area update (TAU) request, likely from a fake base station (IMSI-catcher) forcing a device into its network.
+
+Mitigations:
+Deploy NAS security rules blocking unexpected TAU/ATTACH with unknown TAI.
+Enable 5G NAS integrity protection for all IMSI-based procedures.
+Set NAS timer T3450 to 10 seconds to reject delayed responses from rogue BS.
+Implement NAS rule requiring valid 5G authentication before TAU/ATTACH.
+Configure RAN to drop UE with mismatched TAI list in NAS messages.
+Enforce NAS counter check for duplicate TAU/ATTACH attempts per IMSI.
+Use NAS rule to block TAU/ATTACH with unrecognized PLMN-ID.
+Monitor NAS KPI for abnormal TAU/ATTACH frequency per UE.
+Deploy NAS-based IMSI catcher detection via TAI mismatch alerts.
+Enable NAS logging for all unmasked IMSI-related procedures.

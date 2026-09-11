@@ -1,0 +1,13 @@
+Cause: The NAS-EMM value 125 (unmasked) indicates an unauthorized IMSI attachment or rogue base station (fake eNodeB/gNB) forcing an emergency or non-emergency attach, likely exploiting NAS security flaws or spoofed TAC/IMSI.
+
+Mitigations:
+Isolate the rogue cell via RAN’s TAC filtering rules.
+Enforce NAS security mode commands (SMC) with strict ciphering.
+Block unrecognized IMSI prefixes in MME/SMF via policy controls.
+Deploy NAS replay attack detection with sequence number checks.
+Enable 5G NAS integrity protection for all NAS messages.
+Set NAS timer T3502 to 10 seconds to reject delayed responses.
+Update MME/SMF to reject invalid NAS messages with EMM_CAUSE=125.
+Deploy 5G NAS authentication with SUPI-based integrity checks.
+Monitor NAS traces for repeated unmasked IMSI attachments.
+Trigger automated RAN blacklisting for cells with NAS anomalies.

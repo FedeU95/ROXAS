@@ -1,0 +1,13 @@
+Cause: The NAS-EMM cause value 126 (EMM_REGISTRATION_REJECTED) indicates a fake base station (IMSI catcher) forcing an invalid registration, likely due to malformed or spoofed NAS messages or missing authentication vectors in the MME/S-GW.
+
+Mitigations:
+Isolate the rogue cell via RAN’s E-UTRAN cell blacklist with timer-based re-evaluation every 15 minutes.
+Enforce strict NAS security mode commands (SMC) with counter for failed attempts, triggering UE ejection.
+Deploy MME-level NAS message validation rules to reject unencrypted or malformed EMM messages.
+Implement NAS message integrity checks with KPI for failed integrity checks, auto-blocking UEs.
+Update MME’s authentication vectors cache with a 1-hour refresh counter to prevent replay attacks.
+Enable RAN’s NAS security algorithm selection to enforce only AES-128 for encryption.
+Configure MME to reject NAS messages with invalid NAS message type identifiers (e.g., 126).
+Set RRC connection re-establishment counters to 3 failed attempts before UE blacklisting.
+Deploy core-level NAS trace analysis with anomaly detection rules for repeated EMM_REGISTRATION_REJECTED.
+Monitor NAS signaling load per cell with KPI thresholds, flagging spikes in EMM messages.

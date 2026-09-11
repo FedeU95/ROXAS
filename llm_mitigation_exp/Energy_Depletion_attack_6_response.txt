@@ -1,21 +1,13 @@
-Summary:
-The suspicious trace exhibits several anomalous feature-value pairs, including unusual values for NAS-related fields, L3 protocol discriminator, mobile ID types, and TMSIs. The presence of a known fake base station in the 5G network, combined with these irregularities, suggests a potential unauthorized access attempt or a rogue device impersonating a legitimate user.
+Cause: The NAS-EMM cause value 126 (EMM_REGISTERED_NORMAL_SERVICE) with unmasked NAS indicates a rogue base station (IMSI catcher) forcing unauthorized NAS registration, likely to intercept or spoof 5G authentication/attachments.
 
-Actionable Mitigation Checklist:
-1. **Block the identified Temporary Mobile Subscriber Identity (TMSI)**: Immediately block the TMSI associated with the suspicious trace to prevent further unauthorized access.
-
-2. **Investigate the NAS Key Set ID**: Investigate the NAS Key Set ID (NAS-eps_emm_nas_key_set_id_show=41) to determine if it corresponds to any known rogue devices or unauthorized users.
-
-3. **Monitor L3 Protocol Discriminator**: Monitor the L3 Protocol Discriminator (gsm_a_L3_protocol_discriminator_value=9) for any unusual patterns or values that deviate from the expected range.
-
-4. **Implement stricter authentication and authorization**: Enhance authentication and authorization mechanisms to ensure that only legitimate devices can connect to the network. This could include implementing stronger encryption, multi-factor authentication, and regular security audits.
-
-5. **Update NAS/RRC and core/RAN configurations**: Update NAS/RRC and core/RAN configurations to include rules for detecting and blocking known fake base stations and rogue devices. This could involve setting up specific timers, counters, or KPIs to monitor network activity and identify any abnormal behavior.
-
-6. **Investigate the Mobile ID Types**: Investigate the Mobile ID Types (gsm_a_ie_mobileid_type_value=7) to determine if they correspond to any known unauthorized users or devices.
-
-7. **Monitor TAI and GUMMEI values**: Monitor the values of Tracking Area Identity (TAI) and Global Mobile Mobile Equipment Identity (GUMMEI) for any unusual patterns or values that deviate from the expected range.
-
-8. **Implement intrusion detection systems (IDS)**: Implement IDS solutions to monitor network traffic for any suspicious activity and alert network administrators when potential threats are detected.
-
-Assumptions: The assumptions are based on the information provided in the suspicious trace and the known presence of a fake base station in the network. However, further investigation may be required to confirm the exact nature of the threat and the appropriate mitigation measures.
+Mitigations:
+Isolate the suspicious cell by blacklisting its CI/PCI/TAC in RAN.
+Enable NAS security mode enforcement with mandatory integrity protection.
+Deploy NAS trace analysis with threshold for repeated 126 cause values.
+Configure core to reject NAS messages from unknown TAI lists.
+Implement NAS replay attack detection with sequence number validation.
+Set NAS timer T350 for registration attempts to 10 seconds max.
+Enforce NAS security context validation for all attach requests.
+Deploy 5G NAS authentication failure rate KPI monitoring.
+Block NAS messages from cells with mismatched PLMN-ID.
+Update RAN to enforce NAS security mode 1 for all attachments.

@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_8",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the UE by blocking NAS messages with gsm_a_common_elem_id_value=11.",
+    "Enable NAS message integrity checks for EPS sequence numbers >30.",
+    "Deploy NAS message rate-limiting (threshold: 5 messages/minute per UE).",
+    "Enforce NAS message size validation (reject >256-byte payloads).",
+    "Deploy NAS sequence number tracking (flag duplicates within 10-second window).",
+    "Configure RAN to drop NAS messages with nested_field1_unmaskedvalue=3.",
+    "Enable 5G NAS replay attack protection with 1-minute timestamp validation.",
+    "Update core network to reject NAS messages with nested_field1_show=12.",
+    "Deploy NAS message cryptographic validation for all UE sessions.",
+    "Enable NAS message logging for forensic analysis (store for 72 hours)."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation",
+      "action_indices": [
+        1,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM1009",
+      "fgm_name": "Encrypt Network Traffic",
+      "action_indices": [
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_5",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell via RAN’s E-UTRAN cell blacklist with timer-based re-evaluation every 15 minutes.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce strict NAS security mode commands (SMC) with counter for failed attempts, triggering UE ejection.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy MME-level NAS message validation rules to reject unencrypted or malformed EMM messages.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS message integrity checks with KPI for failed integrity checks, auto-blocking UEs.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 5,
+      "action_text": "Update MME’s authentication vectors cache with a 1-hour refresh counter to prevent replay attacks.",
+      "fgm_id": "FGM1001",
+      "fgm_name": "Security Updates"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable RAN’s NAS security algorithm selection to enforce only AES-128 for encryption.",
+      "fgm_id": "FGM1009",
+      "fgm_name": "Encrypt Network Traffic"
+    },
+    {
+      "index": 7,
+      "action_text": "Configure MME to reject NAS messages with invalid NAS message type identifiers (e.g., 126).",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 8,
+      "action_text": "Set RRC connection re-establishment counters to 3 failed attempts before UE blacklisting.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 9,
+      "action_text": "Deploy core-level NAS trace analysis with anomaly detection rules for repeated EMM_REGISTRATION_REJECTED.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS signaling load per cell with KPI thresholds, flagging spikes in EMM messages.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    }
+  ]
+}

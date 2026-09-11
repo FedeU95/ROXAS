@@ -1,12 +1,13 @@
-Summary: The anomalous NAS trace indicates an unusual combination of values for the NAS EPS EMM EIA5 (EMM Information Elements) and EEA5 (EMM Error Indications) parameters, which may suggest a potential rogue base station attack. This could be an attempt to manipulate the network by sending malicious messages or causing denial-of-service conditions.
+Cause: The suspicious NAS trace indicates a rogue 5G base station (fake eNB/gNB) exploiting NAS protocol anomalies, likely injecting invalid ciphering/integrity keys (e.g., eEA0/eIA0) and spoofing EPS mobility management messages to hijack or deauthenticate legitimate users.
 
-Actionable Mitigation Checklist:
-1. Isolate the suspicious device: Immediately isolate the device associated with the anomalous trace from the 5G network to prevent further potential harm.
-2. Update blacklist: Add the device's IMSI (International Mobile Subscriber Identity) to the network's blacklist to prevent it from reconnecting.
-3. Analyze network logs: Thoroughly analyze network logs to identify any other devices or patterns related to the rogue base station.
-4. Configure NAS EPS EMM security parameters: Tighten NAS EPS EMM security parameters, such as increasing the EIA5 counter threshold and reducing the EIA5 timer value, to make it more difficult for rogue devices to connect and send malicious messages.
-5. Monitor key performance indicators (KPIs): Continuously monitor KPIs related to NAS EPS EMM, such as EIA5 counter and EIA5 timer, to quickly detect any abnormal activity in the future.
-6. Implement intrusion detection systems (IDS): Deploy IDS solutions at the RAN and core network levels to detect and respond to potential rogue base station attacks more effectively.
-7. Regular security audits: Conduct regular security audits to identify and address any vulnerabilities in the 5G network that could be exploited by rogue base stations.
-
-Assumptions: The provided feature-value pairs are indicative of a potential rogue base station attack, but further analysis is required to confirm the exact nature and intent of the attack.
+Mitigations:
+Isolate the rogue cell via immediate RAN exclusion list update.
+Enable strict NAS security mode (e.g., enforce NAS integrity protection).
+Deploy NAS message validation rules for eEA0/eIA0 sizes (≤128 bits).
+Trigger automated NAS re-authentication for affected devices.
+Set NAS sequence number (seq_no) threshold (≤31) for anomaly alerts.
+Block unrecognized NAS element IDs (e.g., elem_id=7, 18) via core firewall.
+Enable 5G NAS replay attack detection with 3-second timestamp validation.
+Configure NAS spare bits (≤8) and size limits for eMM messages.
+Deploy RRC connection reset for devices with gsm_a_extension_size=1.
+Monitor NAS message frequency spikes (>5/minute) as attack KPI.

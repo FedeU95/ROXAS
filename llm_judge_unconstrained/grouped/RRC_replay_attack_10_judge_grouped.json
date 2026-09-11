@@ -1,0 +1,60 @@
+{
+  "sample_id": "RRC_replay_attack_10",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS integrity protection with EEA4 ciphering enforcement via RRC/NAS rules.",
+    "Set NAS sequence number thresholds (e.g., reject >1000 consecutive increments).",
+    "Enable 5G NAS replay attack detection with 3-second timestamp validation.",
+    "Block nested EEA4 parameters unless from trusted MME/SMF via NAS rules.",
+    "Implement NAS message rate limiting (e.g., <5 messages/second per UE).",
+    "Enforce NAS security mode completion (SMC) before data transmission.",
+    "Deploy IMSI-catcher detection via NAS EMM cause code (e.g., reject cause 503).",
+    "Update RAN to filter NAS messages with gsm_a_common_elem_id=11 (legacy IMSI trap).",
+    "Enable NAS trace logging for all EEA4 ciphering failures with NAS-eps_seq_no.",
+    "Monitor NAS-eps_emm_eea4_show anomalies via automated KPI alerts."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Radio Interface",
+      "action_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5019",
+      "fgm_name": "Authorize External API Calls",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit",
+      "action_indices": [
+        10
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_6",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Deploy NAS-level IMSI blacklisting rules for known compromised devices.",
+    "Enable NAS-based TAU authentication failure counters per UE.",
+    "Set NAS timer for TAU retry delays to 30 seconds max.",
+    "Configure RAN to drop NAS messages with invalid IMSI lengths.",
+    "Enforce NAS EMM state machine reset on repeated unmasked IMSI attempts.",
+    "Implement NAS-based IMEI validation against vendor databases.",
+    "Enable NAS-level tracking area list (TAL) validation per PLMN.",
+    "Set NAS rule to block unmasked IMSI values >120 or <100.",
+    "Monitor NAS EMM cause values for 'IMSI unknown in HSS' spikes.",
+    "Deploy NAS-based UE context deletion on failed authentication attempts."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        4,
+        5,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        2,
+        9,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5016",
+      "fgm_name": "NO_MATCH",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "NO_MATCH",
+      "action_indices": [
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        7
+      ]
+    }
+  ]
+}

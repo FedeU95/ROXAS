@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_7",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Isolate the rogue cell via RAN’s IMSI catcher blacklist (timer: 15-minute auto-revert).",
+    "Enable NAS integrity protection with 5G-AKA’ and enforce NAS sequence number validation (counter: reject >30 consecutive mismatches).",
+    "Deploy NAS trace-based anomaly detection with KPI: block traces with nested_field1_unmaskedvalue >2.",
+    "Configure core network to reject EPS Mobility Management with gsm_a_common_elem_id=11 (rule: NAS-0007).",
+    "Implement NAS sequence number rollover checks (KPI: flag if <5% deviation from expected).",
+    "Deploy 5G RAN’s IMSI catcher detection with NAS trace correlation (timer: 1-hour alert escalation).",
+    "Enforce NAS message replay protection via timestamp validation (counter: reject >30-second delays).",
+    "Update NAS protocol stack to ignore nested_field1_show=12 (rule: NAS-0012).",
+    "Enable 5G core’s NAS message authentication code (MAC) verification for all EPS MM messages.",
+    "Deploy real-time NAS trace monitoring with KPI: alert on nested_field1_unmaskedvalue=3 in <10 traces."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2,
+        7,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall",
+      "action_indices": [
+        4,
+        8
+      ]
+    },
+    {
+      "fgm_id": "UNKNOWN",
+      "fgm_name": "UNKNOWN",
+      "action_indices": [
+        5
+      ]
+    }
+  ]
+}

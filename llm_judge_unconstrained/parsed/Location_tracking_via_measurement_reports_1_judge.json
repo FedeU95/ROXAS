@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_1",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell by blocking NAS-EPS sequence numbers above 30.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS-EPS sequence number validation with a rolling window of 10.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy RRC re-authentication triggers for unexpected NAS-EPS sequence gaps.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 4,
+      "action_text": "Enable NAS-EEA4 ciphering integrity checks with a threshold of 99% success rate.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS-EMM state transition monitoring for unauthorized EEA4 activations.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS-EPS sequence number counters to reset after 24-hour inactivity.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 7,
+      "action_text": "Deploy NAS trace analysis with nested_field1 thresholds below 180.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 8,
+      "action_text": "Enable RAN IMSI-catcher detection via gsm_a_common_elem_id mismatches.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Configure NAS-EEA4 ciphering revalidation for repeated failed attempts.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 10,
+      "action_text": "Trigger automated cell reselection for devices with NAS-EPS sequence anomalies.",
+      "fgm_id": "FGM5014",
+      "fgm_name": "UE Location Plausibility"
+    }
+  ]
+}

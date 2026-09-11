@@ -1,0 +1,42 @@
+{
+  "sample_id": "RRC_replay_attack_3",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS security enhancements with NAS security mode 1-3 enforcement.",
+    "Enable IMSI blacklisting for known rogue base station IMSIs.",
+    "Configure RAN to reject NAS messages without valid IMEI/IMSI pairs.",
+    "Set NAS trace thresholds to trigger alerts for repeated 125-value events.",
+    "Implement NAS protocol validation rules for emergency/fallback triggers.",
+    "Deploy 5G NAS integrity protection with NAS security keys.",
+    "Enable RAN-based IMSI catcher detection via NAS trace anomalies.",
+    "Set NAS trace counters to flag >3 failed attachments per device.",
+    "Update core network to reject NAS messages from untrusted eNB/gNB.",
+    "Enforce NAS security mode 1-3 for all 5G NAS messages."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        4,
+        8
+      ]
+    }
+  ]
+}

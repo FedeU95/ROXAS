@@ -1,0 +1,2 @@
+n_human_rows,n_llm_rows,n_human_attack_alert_pairs,n_llm_attack_alert_pairs,n_shared_attack_alert_pairs,n_comparisons,fgt_agreement,fgm_exact_agreement,fgm_overlap_agreement,human_no_match_rate,llm_no_match_rate
+400,400,40,40,40,400,0.125,0.07,0.08,0.185,0.005

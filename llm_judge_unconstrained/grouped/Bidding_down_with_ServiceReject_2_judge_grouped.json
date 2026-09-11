@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_2",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the rogue cell via immediate RAN exclusion list update for IMSI/TAI (32) matching the NAS sequence.",
+    "Enable strict NAS message integrity checks for EPS sequence numbers, flagging values >20 as suspicious.",
+    "Deploy real-time NAS message rate limiting (10 messages/minute per UE) to detect spoofing bursts.",
+    "Enforce NAS message authentication codes (MAC) for all NAS messages, blocking unencrypted or mismatched MACs.",
+    "Update core network to reject NAS messages with nested_field1_show values >5, defaulting to 0.",
+    "Deploy NAS sequence number tracking per UE, alerting on unexpected jumps or resets.",
+    "Configure RAN to enforce NAS message size limits (≤256 bytes), dropping oversized packets.",
+    "Enable NAS message replay detection via sequence number history (last 100 messages per UE).",
+    "Trigger automated RAN cell blacklisting for gsm_a_common_elem_id=11, assuming spoofed authentication attempts.",
+    "Monitor NAS message patterns for anomalies in nested_field1_unmaskedvalue, flagging deviations from baseline."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2
+      ]
+    },
+    {
+      "fgm_id": "FGM5008",
+      "fgm_name": "Monitor Installed Applications For Data Usage",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        5,
+        6,
+        7,
+        8,
+        10
+      ]
+    }
+  ]
+}

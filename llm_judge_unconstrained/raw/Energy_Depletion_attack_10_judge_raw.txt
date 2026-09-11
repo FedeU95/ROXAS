@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_10",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy NAS integrity protection (128-bit) for all EMM messages.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode command (SMC) re-authentication on NAS-EPS sequence >30.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 3,
+      "action_text": "Block unknown gsm_a_common_elem_id values (non-standard IEs).",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 4,
+      "action_text": "Restrict EEA4 ciphering to trusted networks only (KPI: <1% usage).",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 5,
+      "action_text": "Implement NAS trace analysis with NAS-EPS sequence <50 threshold.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable RRC connection re-establishment on NAS anomaly detection.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 7,
+      "action_text": "Configure core network to reject NAS traces with nested_field1_unmaskedvalue >5.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy 5G NAS replay attack detection with sequence number window (≤100).",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Set NAS security mode command failure counter to trigger isolation.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 10,
+      "action_text": "Update RAN to enforce NAS security mode command (SMC) for all UE attachments.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    }
+  ]
+}

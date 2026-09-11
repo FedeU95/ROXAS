@@ -1,0 +1,13 @@
+Cause: The NAS-EPS EMM state (128eea1) value of 125 indicates an unauthorized fake base station (IMSI catcher) forcing an abnormal NAS transition, likely to hijack authentication or extract subscriber data via roaming or emergency attachment exploits.
+
+Mitigations:
+Deploy NAS security event monitoring with a threshold of 3 failed EMM state transitions per device per hour.
+Enable 5G NAS integrity protection with NAS security mode extension (NSSF) enforcement.
+Configure RAN to block unregistered MME/AMF IPs for NAS signaling with a 5-second timeout.
+Implement NAS trace filtering to drop all EMM state 128eea1 traces from unknown eNB/gNBs.
+Set NAS security context validation rules requiring pre-authentication for non-home networks.
+Enable 5G NAS replay attack detection with a 10-message window for duplicate NAS messages.
+Restrict NAS EMM state transitions to authorized states (e.g., 128eea1 → 128eea2) only.
+Deploy NAS anomaly scoring with a score > 0.9 flagging for manual review.
+Update RAN to enforce NAS security mode 3 for all UE attachments.
+Monitor NAS EMM state 128eea1 occurrences per UE, alerting if exceeding 1 per 24 hours.

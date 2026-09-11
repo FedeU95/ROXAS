@@ -1,0 +1,13 @@
+Cause: The fake base station (IMSI-catcher) is spoofing legitimate NAS signaling to hijack authentication (e.g., EEA4 ciphering) and extract credentials via NAS traces, likely exploiting NAS sequence number reuse and unmasked EMM fields.
+
+Mitigations:
+Deploy NAS sequence number validation with a rolling window of 1000 to block reuse.
+Enforce NAS-EPS EMM integrity checks for EEA4 ciphering mismatches.
+Enable RRC connection re-establishment with NAS replay protection for roaming users.
+Configure core network to flag NAS traces with nested_field1_unmaskedvalue > 128.
+Implement NAS-EPS sequence number counters per UE with 5-minute expiration.
+Block NAS traces with gsm_a_common_elem_id_value=11 unless from trusted eNBs.
+Deploy 5G NAS authentication failure rate KPIs (>3% triggers alert).
+Restrict NAS-EPS EMM messages to authorized ciphering suites (EEA0-3).
+Enable RAN-side NAS message logging for suspicious gsm_a_common_elem_id_value=11.
+Set NAS-EPS EMM replay detection threshold to 2 occurrences per minute.

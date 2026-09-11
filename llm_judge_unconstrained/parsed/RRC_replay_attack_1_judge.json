@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_1",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy IMSI catcher detection rules with NAS-EMM unmasked value thresholds >120.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable 5G NAS security mode enforcement for all UE attachments.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Configure RAN to block unknown IMSI attachments without valid authentication.",
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS trace monitoring for repeated unmasked value anomalies.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan"
+    },
+    {
+      "index": 5,
+      "action_text": "Set up a KPI for NAS-EMM unmasked value spikes in high-risk areas.",
+      "fgm_id": "NO_MATCH",
+      "fgm_name": "UNKNOWN"
+    },
+    {
+      "index": 6,
+      "action_text": "Deploy NAS-based IMSI blacklisting for known rogue devices.",
+      "fgm_id": "FGM5019",
+      "fgm_name": "Authorize External API Calls"
+    },
+    {
+      "index": 7,
+      "action_text": "Enforce NAS security context validation for all TAU/ATT attempts.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 8,
+      "action_text": "Enable 5G core network logging for NAS-EMM unmasked value events.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Correctly Configure SMS Firewall"
+    },
+    {
+      "index": 9,
+      "action_text": "Set a counter for failed NAS security mode rejections per UE.",
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs"
+    },
+    {
+      "index": 10,
+      "action_text": "Update RAN to reject NAS messages with unmasked values >120.",
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter"
+    }
+  ]
+}

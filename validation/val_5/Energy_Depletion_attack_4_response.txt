@@ -1,0 +1,13 @@
+Cause: The suspicious NAS trace indicates a rogue 5G base station (fake eNB/gNB) spoofing NAS protocol messages, likely injecting malicious EPS Mobility Management (EMM) messages to hijack or impersonate user sessions.
+
+Mitigations:
+Deploy NAS protocol validation rules to block unregistered protocol discriminator values.
+Set NAS sequence number thresholds to flag out-of-order or rapid sequence resets.
+Enable NAS message integrity checks for EEA0/EEA1/128-EEA1 ciphering mismatches.
+Implement RRC connection re-establishment counters for repeated failed handovers.
+Configure core network to reject NAS messages with invalid EMM state transitions.
+Enforce NAS message rate limiting per subscriber to detect spoofing attempts.
+Deploy 5G authentication failure KPIs to trigger automated network isolation.
+Update RAN to enforce strict gNB identity verification via IMEI/SN checks.
+Enable NAS message replay detection with timestamp validation windows.
+Configure core to drop NAS messages with nested field inconsistencies or missing flags.

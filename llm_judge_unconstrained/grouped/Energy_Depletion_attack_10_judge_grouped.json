@@ -1,0 +1,66 @@
+{
+  "sample_id": "Energy_Depletion_attack_10",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Deploy NAS integrity protection (128-bit) for all EMM messages.",
+    "Enforce NAS security mode command (SMC) re-authentication on NAS-EPS sequence >30.",
+    "Block unknown gsm_a_common_elem_id values (non-standard IEs).",
+    "Restrict EEA4 ciphering to trusted networks only (KPI: <1% usage).",
+    "Implement NAS trace analysis with NAS-EPS sequence <50 threshold.",
+    "Enable RRC connection re-establishment on NAS anomaly detection.",
+    "Configure core network to reject NAS traces with nested_field1_unmaskedvalue >5.",
+    "Deploy 5G NAS replay attack detection with sequence number window (≤100).",
+    "Set NAS security mode command failure counter to trigger isolation.",
+    "Update RAN to enforce NAS security mode command (SMC) for all UE attachments."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        1,
+        6,
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5023",
+      "fgm_name": "Periodic Authentication & Authorization Of NFs",
+      "action_indices": [
+        2,
+        9,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status",
+      "action_indices": [
+        5
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        7
+      ]
+    }
+  ]
+}

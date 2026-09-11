@@ -1,0 +1,6 @@
+The following feature values were flagged:
+
+- nas-eps_seq_no_value=32
+- gsm_a_common_elem_id_value=11
+- nested_field1_unmaskedvalue=3
+- nested_field1_show=12

@@ -1,0 +1,72 @@
+{
+  "sample_id": "Energy_Depletion_attack_9",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    "Isolate the suspicious gNB/eNodeB via OSS using IMSI-based blacklisting rules.",
+    "Enforce NAS security mode command (NSC) validation for all UEs.",
+    "Deploy NAS message replay attack detection with sequence number counters.",
+    "Set NAS timer T3450 (UE inactivity) to 30 seconds for anomaly detection.",
+    "Enable NAS integrity protection for all NAS messages with KSI counters.",
+    "Configure RAN to drop NAS messages from unknown MME/S-GW IPs.",
+    "Implement NAS state machine validation with state transition KPIs.",
+    "Deploy NAS message rate limiting (e.g., 5 messages/minute per UE).",
+    "Monitor NAS-EPS EMM state transitions for unexpected values like 125.",
+    "Trigger automated RAN reconfiguration for gNBs with repeated NAS anomalies."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5001",
+      "fgm_name": "Disable Malicious Transmitter",
+      "action_indices": [
+        1,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5014",
+      "fgm_name": "UE Location Plausibility",
+      "action_indices": [
+        4
+      ]
+    },
+    {
+      "fgm_id": "FGM5012",
+      "fgm_name": "Slice ID Check",
+      "action_indices": [
+        7
+      ]
+    },
+    {
+      "fgm_id": "FGM5518",
+      "fgm_name": "Resource Policy Enforcement",
+      "action_indices": [
+        8
+      ]
+    },
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        9
+      ]
+    }
+  ]
+}

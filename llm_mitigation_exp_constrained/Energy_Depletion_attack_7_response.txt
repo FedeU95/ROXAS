@@ -1,0 +1,12 @@
+Cause: The unmasked NAS value (39) suggests an unauthorized or rogue base station (fake eNB) is impersonating a legitimate network, likely exploiting missing integrity checks or misconfigured subscriber authentication.
+
+FGM5002 Discard RAN signaling received without integrity protection; enforce NAS/RRC integrity protection for all messages.
+FGM5004 Correctly configure SMS firewall; block unrecognized NAS messages at the core.
+FGM5005 Physical and environmental protection; isolate physical access to RAN equipment.
+FGM5006 Restrictive user profile; enforce strict UE authentication policies for NAS traces.
+FGM5012 Slice ID check; validate slice allocation for all NAS messages.
+FGM5023 Periodic authentication & authorization of NFs; re-authenticate core network functions.
+FGM5024 Integrity protection of data communication; enforce NAS/RRC message integrity.
+FGM5091 Mutual authentication; require mutual authentication for NAS signaling.
+FGM5093 SUCI parameter checks; validate SUCI format and integrity in NAS traces.
+FGM5095 TLS certificate check; enforce TLS for NAS/RRC communication endpoints.

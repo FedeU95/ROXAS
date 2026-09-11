@@ -1,0 +1,13 @@
+Cause: The flagged NAS value (125) likely indicates an unauthorized IMSI attachment or rogue base station (fake eNB/gNB) forcing an emergency-only or restricted service state, exploiting NAS security procedures to bypass authentication or hijack UE context.
+
+Mitigations:
+Deploy NAS security mode extension (SME) to enforce strict IMSI attachment rules.
+Set NAS security mode counter to 3+ for all UEs to block unauthorized NAS messages.
+Enable NAS trace filtering with NAS-EPS-EMM-128EEA1 threshold at 100+ for alerts.
+Configure RAN to reject NAS messages from unknown eNB/gNB IEs.
+Implement NAS integrity protection with NAS-MAP-ALLOWLIST for trusted IMSIs.
+Enforce NAS timer T3450 (reauthentication) at 10-minute intervals for suspicious UEs.
+Block NAS messages with NAS-EPS-EMM-128EEA1 > 120 via core policy rules.
+Deploy NAS-based UE context validation to verify eNB/gNB legitimacy.
+Enable NAS-based emergency-only mode enforcement for non-registered UEs.
+Monitor NAS message frequency per UE with a 5-message/second counter for anomalies.

@@ -1,0 +1,68 @@
+{
+  "sample_id": "Energy_Depletion_attack_7",
+  "attack_label": "Energy Depletion",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell by blocking its TAC in MME/SMF via dynamic TAC blacklist.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce strict NAS security mode commands (NAS-SMC) for all UE attachments.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 3,
+      "action_text": "Deploy 5G NAS integrity protection with 128-bit keys for all NAS messages.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 4,
+      "action_text": "Enable NAS replay protection with a 10-message sliding window.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 5,
+      "action_text": "Configure MME to reject NAS messages from unknown TACs within 5-minute windows.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 6,
+      "action_text": "Implement NAS cause code monitoring with alerts for cause 39 spikes.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Unlimited Data Plan"
+    },
+    {
+      "index": 7,
+      "action_text": "Update RAN to enforce 5G NAS security mode 3 (full integrity protection).",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    },
+    {
+      "index": 8,
+      "action_text": "Set MME to drop NAS messages without valid NAS security header.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 9,
+      "action_text": "Deploy NAS trace analysis to detect abnormal NAS reset patterns.",
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer"
+    },
+    {
+      "index": 10,
+      "action_text": "Enable NAS security mode enforcement for all UE contexts in 5G.",
+      "fgm_id": "FGM5024",
+      "fgm_name": "Integrity Protection Of Data Communication"
+    }
+  ]
+}

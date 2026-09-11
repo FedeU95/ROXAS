@@ -1,0 +1,60 @@
+{
+  "sample_id": "Bidding_down_with_ServiceReject_4",
+  "attack_label": "Bidding Down with Service Reject",
+  "fight_technique_id": "FGT1562.501",
+  "fight_technique_name": "Bid Down UE",
+  "actions": [
+    "Deploy NAS security event monitoring with a threshold of 3 failed EMM state transitions per device per hour.",
+    "Enable 5G NAS integrity protection with NAS security mode extension (NSSF) enforcement.",
+    "Configure RAN to block unregistered MME/AMF IPs for NAS signaling with a 5-second timeout.",
+    "Implement NAS trace filtering to drop all EMM state 128eea1 traces from unknown eNB/gNBs.",
+    "Set NAS security context validation rules requiring pre-authentication for non-home networks.",
+    "Enable 5G NAS replay attack detection with a 10-message window for duplicate NAS messages.",
+    "Restrict NAS EMM state transitions to authorized states (e.g., 128eea1 → 128eea2) only.",
+    "Deploy NAS anomaly scoring with a score > 0.9 flagging for manual review.",
+    "Update RAN to enforce NAS security mode 3 for all UE attachments.",
+    "Monitor NAS EMM state 128eea1 occurrences per UE, alerting if exceeding 1 per 24 hours."
+  ],
+  "mapped_mitigations": [
+    {
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions",
+      "action_indices": [
+        1,
+        7,
+        8,
+        10
+      ]
+    },
+    {
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity",
+      "action_indices": [
+        2,
+        9
+      ]
+    },
+    {
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection",
+      "action_indices": [
+        3
+      ]
+    },
+    {
+      "fgm_id": "FGM5003",
+      "fgm_name": "Cross Check Between Application Layer And Transport Layer",
+      "action_indices": [
+        4,
+        6
+      ]
+    },
+    {
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication",
+      "action_indices": [
+        5
+      ]
+    }
+  ]
+}

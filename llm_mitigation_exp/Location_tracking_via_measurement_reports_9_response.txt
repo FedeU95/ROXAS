@@ -1,0 +1,13 @@
+Cause: The NAS-EMM unmasked value (125) indicates an unauthorized IMSI attachment or tracking area update (TAU) attempt, likely from a fake base station (IMSI-catcher) forcing a rogue network registration.
+
+Mitigations:
+Deploy IMSI blacklisting rules for known compromised devices.
+Enable NAS security mode command (SEC-MODE-CMD) enforcement.
+Set NAS timer T3450 to 10 seconds for faster rogue cell detection.
+Implement NAS security context validation for all TAU/ATTACH requests.
+Configure RAN to reject NAS messages with invalid NAS security algorithms.
+Enable NAS integrity protection for all NAS messages.
+Set NAS counter T3512 to 30 seconds for suspicious NAS retries.
+Deploy NAS message filtering for unexpected NAS-EMM unmasked values.
+Enforce NAS security mode command (SEC-MODE-CMD) for all UE registrations.
+Monitor NAS trace logs for repeated NAS-EMM unmasked value anomalies.

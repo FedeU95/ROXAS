@@ -1,0 +1,68 @@
+{
+  "sample_id": "RRC_replay_attack_2",
+  "attack_label": "RRC Replay",
+  "fight_technique_id": "FGT1583.501",
+  "fight_technique_name": "False Base Station Or Access Point",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Isolate the rogue cell via RAN’s TAC filtering rules.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 2,
+      "action_text": "Enforce NAS security mode commands (SMC) with strict ciphering.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Block unrecognized IMSI prefixes in MME/SMF via policy controls.",
+      "fgm_id": "FGM5019.001",
+      "fgm_name": "Intercept Home Network Via SUCI"
+    },
+    {
+      "index": 4,
+      "action_text": "Deploy NAS replay attack detection with sequence number checks.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 5,
+      "action_text": "Enable 5G NAS integrity protection for all NAS messages.",
+      "fgm_id": "FGM5009.001",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Set NAS timer T3502 to 10 seconds to reject delayed responses.",
+      "fgm_id": "FGM5016",
+      "fgm_name": "Abuse Of Inter-operator Interfaces"
+    },
+    {
+      "index": 7,
+      "action_text": "Update MME/SMF to reject invalid NAS messages with EMM_CAUSE=125.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy 5G NAS authentication with SUPI-based integrity checks.",
+      "fgm_id": "FGM5091",
+      "fgm_name": "Mutual Authentication"
+    },
+    {
+      "index": 9,
+      "action_text": "Monitor NAS traces for repeated unmasked IMSI attachments.",
+      "fgm_id": "FGM5007",
+      "fgm_name": "Registration Of Malicious Network Functions"
+    },
+    {
+      "index": 10,
+      "action_text": "Trigger automated RAN blacklisting for cells with NAS anomalies.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Discard RAN Signaling Received Without Integrity Protection"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Cause: The fake base station (IMSI-catcher) is spoofing legitimate NAS signaling (e.g., EMM/EPS procedures) to intercept or manipulate subscriber sessions, with observed anomalies in sequence numbers, ciphering keys, and NAS message integrity.
+
+Mitigations:
+Isolate the rogue cell via RAN’s IMSI catcher detection rules.
+Enforce NAS sequence number validation with a rolling window of 10.
+Block NAS messages with unregistered gsm_a_common_elem_id (11) in core.
+Enable EEA4 ciphering key validation against known KDF outputs.
+Deploy NAS message integrity checks for nested_field1 values >128.
+Set NAS message rate limit to 5 requests/minute per UE.
+Trigger RRC re-establishment for UEs with NAS-EPS sequence >30.
+Deploy 5G NAS replay attack detection with 3-second timestamp checks.
+Update core to reject NAS-EPS_EMM_EEA4_SHOW values outside 0-105 range.
+Enable 5G NAS authentication failure counters for anomaly scoring.

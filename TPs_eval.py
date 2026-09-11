@@ -5,17 +5,17 @@ import joblib
 from vote import Ensemble
 
 # ---- Config ----
-MODEL_PATH   = "models/AD_MSA_nas_XGB_aug.pkl"      # model
-SCALER_PATH  = "models/AD_MSA_scaler_aug.pkl"       # matching scaler
-ART_PATH     = "models/AD_MSA_artifacts.json"       # selected_features, medians, threshold, target
-OUTPUT_DIR   = "TPs_eva;"
+MODEL_PATH   = "models/new_xgb.pkl"      # model
+SCALER_PATH  = "models/new_scaler.pkl"       # matching scaler
+ART_PATH     = "models/new_artifacts.json"       # selected_features, medians, threshold, target
+OUTPUT_DIR   = "TPs_eval_nas"
 TOTAL_TPS    = 100
 SEED         = 0
 random.seed(SEED); np.random.seed(SEED)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---- Load data ----
-df = pd.read_csv("data/MSA.csv", low_memory=False)
+df = pd.read_csv("data/malicious.csv", low_memory=False)
 df.drop(df.columns[0], axis=1, inplace=True)
 df = df.drop_duplicates()
 assert {"Binary_Label","Multiclass_Label"}.issubset(df.columns)
@@ -31,7 +31,7 @@ with open(ART_PATH) as f:
     art = json.load(f)
 selected_features = art["selected_features"]
 feature_medians   = pd.Series(art["feature_medians"])
-threshold         = float(art["threshold"])
+threshold         = float(art["benign_percentile_threshold"])
 target_feature    = art["target_feature"]
 
 # ---- Build malicious set and compute anomalies with saved preprocessing ----

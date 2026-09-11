@@ -1,0 +1,12 @@
+Cause: The suspicious NAS trace indicates potential spoofed or unauthorized access via fake base station, likely exploiting weak authentication or NAS signaling anomalies.
+
+FGM5002 Discard RAN Signaling Received Without Integrity Protection; enforce NAS signaling integrity checks.
+FGM5003 Cross Check Between Application Layer And Transport Layer; validate NAS payloads against transport layer headers.
+FGM5004 Correctly Configure SMS Firewall; block unauthorized NAS messages with invalid sequence numbers.
+FGM5005 Physical And Environmental Protection; secure RAN equipment against tampering or unauthorized access.
+FGM5012 Slice ID Check; enforce strict slice ID validation for NAS messages.
+FGM5013 Timely Updates To UE Status; monitor and enforce UE status updates in real-time.
+FGM5023 Periodic Authentication & Authorization Of NFs; re-authenticate network functions handling NAS traffic.
+FGM5024 Integrity Protection Of Data Communication; enforce NAS message integrity protection.
+FGM5091 Mutual Authentication; enforce mutual authentication for NAS signaling.
+FGM5095 TLS Certificate Check; validate TLS certificates for NAS signaling endpoints.

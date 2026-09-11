@@ -1,0 +1,68 @@
+{
+  "sample_id": "Location_tracking_via_measurement_reports_9",
+  "attack_label": "Location Tracking",
+  "fight_technique_id": "FGT5012",
+  "fight_technique_name": "Locate UE",
+  "actions": [
+    {
+      "index": 1,
+      "action_text": "Deploy IMSI blacklisting rules for known compromised devices.",
+      "fgm_id": "FGM5002",
+      "fgm_name": "Bypass Home Routing"
+    },
+    {
+      "index": 2,
+      "action_text": "Enable NAS security mode command (SEC-MODE-CMD) enforcement.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 3,
+      "action_text": "Set NAS timer T3450 to 10 seconds for faster rogue cell detection.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 4,
+      "action_text": "Implement NAS security context validation for all TAU/ATTACH requests.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 5,
+      "action_text": "Configure RAN to reject NAS messages with invalid NAS security algorithms.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 6,
+      "action_text": "Enable NAS integrity protection for all NAS messages.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 7,
+      "action_text": "Set NAS counter T3512 to 30 seconds for suspicious NAS retries.",
+      "fgm_id": "FGM5013",
+      "fgm_name": "Timely Updates To UE Status"
+    },
+    {
+      "index": 8,
+      "action_text": "Deploy NAS message filtering for unexpected NAS-EMM unmasked values.",
+      "fgm_id": "FGM5004",
+      "fgm_name": "Network Flow Manipulation"
+    },
+    {
+      "index": 9,
+      "action_text": "Enforce NAS security mode command (SEC-MODE-CMD) for all UE registrations.",
+      "fgm_id": "FGM5009",
+      "fgm_name": "Weaken Integrity"
+    },
+    {
+      "index": 10,
+      "action_text": "Monitor NAS trace logs for repeated NAS-EMM unmasked value anomalies.",
+      "fgm_id": "FGM0947",
+      "fgm_name": "Audit"
+    }
+  ]
+}
