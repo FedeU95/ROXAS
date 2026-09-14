@@ -133,3 +133,23 @@ print(f"Prompt construction total runtime: {prompt_total:.6f} s")
 print(f"Prompt construction average runtime per alert: {prompt_avg:.6f} s")
 print(f"Combined total runtime: {combined_total:.6f} s")
 print(f"Combined average runtime per alert: {combined_avg:.6f} s")
+
+# ---------- Runtime summary ----------
+runtime_df = pd.DataFrame(runtime_rows)
+
+# Save per-alert runtimes
+runtime_df.to_csv(
+    os.path.join(OUT_DIR, "runtime_details.csv"),
+    index=False
+)
+
+for col, label in [
+    ("feature_attribution_runtime_s", "Feature attribution"),
+    ("prompt_construction_runtime_s", "Prompt construction")
+]:
+    print(f"\n{label}")
+    print(f"Total: {runtime_df[col].sum():.6f} s")
+    print(f"Mean:  {runtime_df[col].mean():.6f} s")
+    print(f"Std:   {runtime_df[col].std():.6f} s")
+    print(f"Min:   {runtime_df[col].min():.6f} s")
+    print(f"Max:   {runtime_df[col].max():.6f} s")

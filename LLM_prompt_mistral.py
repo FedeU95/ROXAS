@@ -148,6 +148,7 @@ for fname in sorted(os.listdir(PROMPT_DIR)):
         continue
 
 # ============ Runtime summary ============
+# ============ Runtime summary ============
 runtime_df = pd.DataFrame(runtime_rows)
 
 print("\n=== Runtime: Unconstrained LLM Mitigation Generation ===")
@@ -155,9 +156,25 @@ print("\n=== Runtime: Unconstrained LLM Mitigation Generation ===")
 if len(runtime_df) == 0:
     print("No LLM calls were completed.")
 else:
-    total_runtime = runtime_df["llm_generation_runtime_s"].sum()
-    avg_runtime = runtime_df["llm_generation_runtime_s"].mean()
+    col = "llm_generation_runtime_s"
+
+    total_runtime = runtime_df[col].sum()
+    mean_runtime = runtime_df[col].mean()
+    std_runtime = runtime_df[col].std()
+    min_runtime = runtime_df[col].min()
+    max_runtime = runtime_df[col].max()
+    median_runtime = runtime_df[col].median()
 
     print(f"Generated responses: {len(runtime_df)}")
-    print(f"Total runtime: {total_runtime:.6f} s")
-    print(f"Average runtime per alert: {avg_runtime:.6f} s")
+    print(f"Total runtime:   {total_runtime:.6f} s")
+    print(f"Mean runtime:    {mean_runtime:.6f} s")
+    print(f"Std deviation:   {std_runtime:.6f} s")
+    print(f"Median runtime:  {median_runtime:.6f} s")
+    print(f"Minimum runtime: {min_runtime:.6f} s")
+    print(f"Maximum runtime: {max_runtime:.6f} s")
+
+    # Save individual runtimes for reproducibility
+    runtime_df.to_csv(
+        os.path.join(RESPONSE_DIR, "runtime_unconstrained.csv"),
+        index=False
+    )
