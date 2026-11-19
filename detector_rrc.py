@@ -20,7 +20,7 @@ Path(MODEL_DIR).mkdir(parents=True, exist_ok=True)
 target_feature = "lte-rrc_ulInformationTransfer_element_size"
 
 
-initial_benign_percentile = 85
+initial_benign_percentile = 75
 corr_thresh = 0.95
 std_thresh = 1e-6
 mi_quantile = 0.25
